@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../components/chip.dart';
 import '../../../components/icon_button.dart';
 import '../../../components/scaffold.dart';
 import '../../../components/text_button.dart';
@@ -17,7 +18,6 @@ class HomePageView extends GetView<HomePageController> {
 
   Widget _body() => Column(
         children: [
-          const Placeholder(),
           CustomTextButton(
             action: () {
               print('!!!!');
@@ -30,6 +30,10 @@ class HomePageView extends GetView<HomePageController> {
             },
             icon: Icons.menu,
           ),
+          CustomChip(
+            action: () {},
+            label: 'چیپ',
+          )
         ],
       );
 }

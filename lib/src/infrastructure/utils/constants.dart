@@ -6,6 +6,11 @@ class Constants {
   static const Color buttonColor = Color(0xffFF6A5E);
   static const Color buttonSecondaryColor = Color(0xff465B54);
   static const Color buttonShadowColor = Color(0xff151513);
+  static const Color selectedChipColor = Color(0xff60809C);
+  static const Color selectedChipTextColor = Color(0xffFFFFFF);
+  static const Color deSelectedChipColor = Color(0xffE1E6EF);
+  static const Color deSelectedChipTextColor = Color(0xff373B3F);
+  static const Color deSelectedChipBorderColor = Color(0xffC9CED7);
 
   static const double tinySpace = 2;
   static const double smallSpace = 4;
