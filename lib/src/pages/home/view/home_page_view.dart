@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../components/icon_button.dart';
 import '../../../components/scaffold.dart';
 import '../../../components/text_button.dart';
 import '../controller/home_page_controller.dart';
@@ -22,6 +23,12 @@ class HomePageView extends GetView<HomePageController> {
               print('!!!!');
             },
             label: 'بعدی',
+          ),
+          CustomIconButton(
+            action: () {
+              print('icon');
+            },
+            icon: Icons.menu,
           ),
         ],
       );
