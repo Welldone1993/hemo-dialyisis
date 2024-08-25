@@ -26,7 +26,7 @@ class _CustomTextButtonState extends State<CustomTextButton> {
   Widget build(BuildContext context) => Padding(
         padding: Constants.smallPadding,
         child: SizedBox(
-          width: MediaQuery.of(context).devicePixelRatio/0.01,
+          width: MediaQuery.of(context).devicePixelRatio / 0.01,
           height: 50,
           child: _containerButton(),
         ),
@@ -37,6 +37,7 @@ class _CustomTextButtonState extends State<CustomTextButton> {
           setState(() {
             _padding = 0.0;
             _margin = 6.0;
+            widget.action();
           });
         },
         onTapUp: (details) {
@@ -65,28 +66,6 @@ class _CustomTextButtonState extends State<CustomTextButton> {
                 style: Constants.boldTextStyle,
               ),
             ),
-          ),
-        ),
-      );
-
-  Widget _button() => ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          disabledBackgroundColor: Colors.grey,
-          backgroundColor: Constants.buttonColor,
-          textStyle: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-          elevation: Constants.giantSpace,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(Constants.giantSpace),
-          ),
-        ),
-        onPressed: widget.isDisable! ? null : widget.action,
-        child: Text(
-          widget.label,
-          style: const TextStyle(
-            color: Colors.white,
           ),
         ),
       );

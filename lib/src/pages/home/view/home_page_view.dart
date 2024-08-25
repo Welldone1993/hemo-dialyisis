@@ -18,7 +18,9 @@ class HomePageView extends GetView<HomePageController> {
         children: [
           const Placeholder(),
           CustomTextButton(
-            action: () {},
+            action: () {
+              print('!!!!');
+            },
             label: 'بعدی',
           ),
         ],
