@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 class Constants {
   static const Color backgroundColor = Color(0xffD9D9D9);
   static const Color appBarColor = Color(0xff34536A);
+  static const Color buttonColor = Color(0xffFF6A5E);
+  static const Color buttonSecondaryColor = Color(0xff465B54);
+  static const Color buttonShadowColor = Color(0xff151513);
 
   static const double tinySpace = 2;
   static const double smallSpace = 4;
