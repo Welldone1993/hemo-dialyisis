@@ -24,6 +24,18 @@ class HomePageView extends GetView<HomePageController> {
             },
             label: 'بعدی',
           ),
+          CustomTextButton.outline(
+            action: () {
+              print('!!!!');
+            },
+            label: 'بعدی',
+          ),
+          CustomTextButton.secondary(
+            action: () {
+              print('!!!!');
+            },
+            label: 'بعدی',
+          ),
           CustomIconButton(
             action: () {
               print('icon');
