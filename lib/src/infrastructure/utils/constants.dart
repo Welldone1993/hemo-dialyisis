@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Constants {
+  static const Color backgroundColor = Color(0xffD9D9D9);
+  static const Color appBarColor = Color(0xff34536A);
+
   static const double tinySpace = 2;
   static const double smallSpace = 4;
   static const double mediumSpace = 8;
@@ -31,4 +34,9 @@ class Constants {
       EdgeInsetsDirectional.all(largeSpace);
   static const EdgeInsetsDirectional giantPadding =
       EdgeInsetsDirectional.all(giantSpace);
+
+  static const boldTextStyle = TextStyle(
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
 }

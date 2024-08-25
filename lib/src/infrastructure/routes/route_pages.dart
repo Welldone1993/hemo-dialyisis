@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:hemo_dialysis/src/home/common/home_page_binding.dart';
-import 'package:hemo_dialysis/src/home/view/home_page_view.dart';
 
+import '../../pages/home/common/home_page_binding.dart';
+import '../../pages/home/view/home_page_view.dart';
 import 'route_names.dart';
 
 class HemoDialysisModulePages {

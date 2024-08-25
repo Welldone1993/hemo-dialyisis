@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,10 +8,10 @@ class HemoDialysis extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => GetMaterialApp(
-    getPages: [
-      ...HemoDialysisModulePages.routes,
-    ],
-    initialRoute: '/home-Page',
-    debugShowCheckedModeBanner: false,
-  );
+        getPages: [
+          ...HemoDialysisModulePages.routes,
+        ],
+        initialRoute: '/home-Page',
+        debugShowCheckedModeBanner: false,
+      );
 }
