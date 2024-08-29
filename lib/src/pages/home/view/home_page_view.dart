@@ -61,9 +61,15 @@ class HomePageView extends GetView<HomePageController> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text('شروع درمان'),
+              Text(
+                'شروع درمان',
+                style: TextStyle(fontFamily: 'IranianSans'),
+              ),
               Constants.mediumVerticalSpacer,
-              Text('برای درمان آماده اید؟'),
+              Text(
+                'برای درمان آماده اید؟',
+                style: TextStyle(fontFamily: 'IranianSans'),
+              ),
             ],
           ),
           Constants.giantHorizontalSpacer,

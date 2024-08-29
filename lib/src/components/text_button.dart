@@ -78,7 +78,10 @@ class _CustomTextButtonState extends State<CustomTextButton> {
               child: Text(
                 widget.label,
                 style: TextStyle(
-                    fontWeight: FontWeight.bold, color: _getButtonTextColor()),
+                  fontWeight: FontWeight.bold,
+                  color: _getButtonTextColor(),
+                  fontFamily: 'IranianSans'
+                ),
               ),
             ),
           ),
