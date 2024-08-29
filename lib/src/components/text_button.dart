@@ -39,7 +39,7 @@ class _CustomTextButtonState extends State<CustomTextButton> {
   Widget build(BuildContext context) => Padding(
         padding: Constants.smallPadding,
         child: SizedBox(
-          width: MediaQuery.of(context).devicePixelRatio / 0.01,
+          width: MediaQuery.of(context).devicePixelRatio / 0.006,
           height: 50,
           child: _containerButton(),
         ),
@@ -101,7 +101,7 @@ class _CustomTextButtonState extends State<CustomTextButton> {
       case _ButtonState.primary:
         return Constants.buttonShadowColor;
       case _ButtonState.secondary:
-        return Constants.whiteTextColor;
+        return Constants.whiteColor;
       case _ButtonState.outline:
         return Constants.buttonOutlineTextColor;
     }

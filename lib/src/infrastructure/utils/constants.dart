@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-  static const Color backgroundColor = Color(0xffD9D9D9);
-  static const Color appBarColor = Color(0xff34536A);
+  static const Color backgroundColor = Color(0xffFAFAF9);
   static const Color buttonColor = Color(0xffFF6A5E);
   static const Color buttonSecondaryColor = Color(0xff465B54);
   static const Color buttonOutlineTextColor = Color(0xff415A70);
   static const Color buttonShadowColor = Color(0xff151513);
   static const Color selectedChipColor = Color(0xff60809C);
-  static const Color whiteTextColor = Color(0xffFFFFFF);
+  static const Color whiteColor = Color(0xffFFFFFF);
   static const Color deSelectedChipColor = Color(0xffE1E6EF);
   static const Color deSelectedChipTextColor = Color(0xff373B3F);
   static const Color deSelectedChipBorderColor = Color(0xffC9CED7);
+  static const Color cardBackground = Color(0xfff5f5f3);
+  static const Color cardBorderColor = Color(0xff667571);
+
+  static const String startImage = 'lib/assets/start.png';
 
   static const double tinySpace = 2;
   static const double smallSpace = 4;

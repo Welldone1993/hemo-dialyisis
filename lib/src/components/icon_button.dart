@@ -7,12 +7,14 @@ class CustomIconButton extends StatefulWidget {
     super.key,
     required this.icon,
     required this.action,
+    this.color,
     this.isDisable = false,
   });
 
   final IconData icon;
   final void Function() action;
   final bool? isDisable;
+  final Color? color;
 
   @override
   State<CustomIconButton> createState() => _CustomTextButtonState();
@@ -55,7 +57,7 @@ class _CustomTextButtonState extends State<CustomIconButton> {
           ),
           child: Container(
             decoration: BoxDecoration(
-              color: Constants.buttonColor,
+              color: widget.color ?? Constants.buttonColor,
               borderRadius: BorderRadius.circular(Constants.mediumSpace),
               border:
                   Border.all(color: Constants.buttonShadowColor, width: 1.5),

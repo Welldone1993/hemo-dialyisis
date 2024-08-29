@@ -42,7 +42,7 @@ class _CustomTextButtonState extends State<CustomChip> {
         selectedColor: Constants.selectedChipColor,
         labelStyle: TextStyle(
           color: _isSelected
-              ? Constants.whiteTextColor
+              ? Constants.whiteColor
               : Constants.deSelectedChipTextColor,
         ),
         shape: StadiumBorder(
@@ -67,6 +67,6 @@ class _CustomTextButtonState extends State<CustomChip> {
 
   Widget _checkmarkIcon() => const Icon(
         Icons.check,
-        color: Constants.whiteTextColor,
+        color: Constants.whiteColor,
       );
 }
