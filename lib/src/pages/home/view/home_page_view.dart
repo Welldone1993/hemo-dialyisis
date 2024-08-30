@@ -3,13 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:hemo_dialysis/src/components/image_provider.dart';
-import 'package:hemo_dialysis/src/components/button_with_text.dart';
-import 'package:hemo_dialysis/src/components/text_button.dart';
-import 'package:hemo_dialysis/src/infrastructure/utils/constants.dart';
-import 'package:hemo_dialysis/src/infrastructure/utils/decorations.dart';
 
+import '../../../components/button_with_text.dart';
+import '../../../components/image_provider.dart';
 import '../../../components/scaffold.dart';
+import '../../../components/text_button.dart';
+import '../../../infrastructure/utils/constants.dart';
+import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_support_icon.dart';
 import '../controller/home_page_controller.dart';
 
@@ -25,7 +25,6 @@ class HomePageView extends GetView<HomePageController> {
         action2: _appBarWelcomeText(),
         action3: const AppBarSupportIcon(),
       );
-
 
   Widget _appBarWelcomeText() => const AutoSizeText(
         'محمد عزیز، خوش آمدید.',

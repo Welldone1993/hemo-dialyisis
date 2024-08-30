@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hemo_dialysis/src/components/button_with_icon.dart';
-import 'package:hemo_dialysis/src/components/text_button.dart';
 
 import '../infrastructure/utils/constants.dart';
+import 'button_with_icon.dart';
+import 'text_button.dart';
 
 class CustomScaffold extends StatefulWidget {
   const CustomScaffold({

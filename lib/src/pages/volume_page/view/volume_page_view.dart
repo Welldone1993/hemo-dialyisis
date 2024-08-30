@@ -1,14 +1,15 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:hemo_dialysis/src/components/button_with_icon.dart';
-import 'package:hemo_dialysis/src/components/button_with_text.dart';
-import 'package:hemo_dialysis/src/components/scaffold.dart';
-import 'package:hemo_dialysis/src/infrastructure/utils/constants.dart';
-import 'package:hemo_dialysis/src/infrastructure/utils/decorations.dart';
-import 'package:hemo_dialysis/src/pages/shared/view/app_bar_back_icon.dart';
-import 'package:hemo_dialysis/src/pages/shared/view/app_bar_support_icon.dart';
-import 'package:hemo_dialysis/src/pages/volume_page/controller/volume_page_controller.dart';
+
+import '../../../components/button_with_icon.dart';
+import '../../../components/button_with_text.dart';
+import '../../../components/scaffold.dart';
+import '../../../infrastructure/utils/constants.dart';
+import '../../../infrastructure/utils/decorations.dart';
+import '../../shared/view/app_bar_back_icon.dart';
+import '../../shared/view/app_bar_support_icon.dart';
+import '../controller/volume_page_controller.dart';
 
 class VolumePageView extends GetView<VolumePageController> {
   const VolumePageView({super.key});
@@ -31,30 +32,31 @@ class VolumePageView extends GetView<VolumePageController> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _volumePart(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CustomButtonWithText(
-                      label: 'بله',
-                      action: () {},
-                    ),
-                    CustomButtonWithText.secondary(
-                      label: 'بیشتر شود',
-                      action: () {},
-                    ),
-                    CustomButtonWithText.outline(
-                      label: 'کمتر شود',
-                      action: () {},
-                    ),
-                  ],
-                )
-              ],
+              children: [_volumePart(), _actionButtons()],
             ),
           ),
         ),
       );
+
+  Row _actionButtons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        CustomButtonWithText(
+          label: 'بله',
+          action: controller.navigateToFontPage,
+        ),
+        CustomButtonWithText.secondary(
+          label: 'بیشتر شود',
+          action: () {},
+        ),
+        CustomButtonWithText.outline(
+          label: 'کمتر شود',
+          action: () {},
+        ),
+      ],
+    );
+  }
 
   Widget _volumePart() => Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:hemo_dialysis/src/infrastructure/utils/constants.dart';
+
+import '../infrastructure/utils/constants.dart';
 
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton({
