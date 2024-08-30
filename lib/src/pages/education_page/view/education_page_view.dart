@@ -5,13 +5,10 @@ import 'package:hemo_dialysis/src/components/scaffold.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
-import '../controller/profile_page_controller.dart';
-import 'widget/patient_info.dart';
-import 'widget/personal_info.dart';
-import 'widget/prescription_info.dart';
+import '../controller/education_page_controller.dart';
 
-class ProfilePageView extends GetView<ProfilePageController> {
-  const ProfilePageView({super.key});
+class EducationPageView extends GetView<EducationPageController> {
+  const EducationPageView({super.key});
 
   @override
   Widget build(BuildContext context) => CustomScaffold(
@@ -32,17 +29,5 @@ class ProfilePageView extends GetView<ProfilePageController> {
         ),
       );
 
-  Widget _data() => const Row(
-        children: [
-          Expanded(
-            child: Column(
-              children: [
-                Expanded(flex: 3, child: PrescriptionInfo()),
-                Expanded(flex: 5, child: PatientInfo()),
-              ],
-            ),
-          ),
-          Expanded(child: PersonalInfo()),
-        ],
-      );
+  Widget _data() => const Placeholder();
 }

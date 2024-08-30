@@ -20,6 +20,10 @@ class HemoDialysisRouteNames extends Routes {
     RoutePaths.homePage + RoutePaths.profilePage,
     RoutePaths.profilePage,
   );
+  static const Routes educationPage = Routes(
+    RoutePaths.homePage + RoutePaths.educationPage,
+    RoutePaths.educationPage,
+  );
   static const Routes volumePage = Routes(
     RoutePaths.homePage + RoutePaths.volumePage,
     RoutePaths.volumePage,

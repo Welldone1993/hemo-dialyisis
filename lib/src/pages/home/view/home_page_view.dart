@@ -88,15 +88,19 @@ class HomePageView extends GetView<HomePageController> {
             CustomTextButton(
               action: controller.navigateToProfilePage,
               text: 'پروفایل کاربری',
-              heroTag: 'profile',
             ),
             _profileCardDivider(),
             CustomTextButton(
-                action: controller.navigateToProfilePage, text: 'نسخه'),
+              action: controller.navigateToProfilePage,
+              text: 'نسخه',
+            ),
             _profileCardDivider(),
             CustomTextButton(action: () {}, text: 'فروشگاه'),
             _profileCardDivider(),
-            CustomTextButton(action: () {}, text: 'آموزش'),
+            CustomTextButton(
+              action: controller.navigateToEducationPage,
+              text: 'آموزش',
+            ),
             _profileCardDivider(),
             // const Spacer(),
           ],

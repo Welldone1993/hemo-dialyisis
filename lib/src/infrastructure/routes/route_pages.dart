@@ -8,6 +8,8 @@ import 'package:hemo_dialysis/src/pages/vascular_access_page/common/vascular_acc
 import 'package:hemo_dialysis/src/pages/vascular_access_page/view/vascular_access_page_view.dart';
 
 import '../../pages/consumables_page/common/consumables_page_binding.dart';
+import '../../pages/education_page/common/education_page_binding.dart';
+import '../../pages/education_page/view/education_page_view.dart';
 import '../../pages/font_page/common/font_page_binding.dart';
 import '../../pages/home/common/home_page_binding.dart';
 import '../../pages/home/view/home_page_view.dart';
@@ -27,6 +29,7 @@ class HemoDialysisModulePages {
         children: [
           _volumePage(),
           _profilePage(),
+          _educationPage(),
         ],
       );
 
@@ -34,6 +37,14 @@ class HemoDialysisModulePages {
         name: HemoDialysisRouteNames.profilePage.path,
         page: ProfilePageView.new,
         binding: ProfilePageBinding(),
+        customTransition: MyCustomTransition(),
+        transitionDuration: const Duration(milliseconds: 200),
+      );
+
+  static GetPage<dynamic> _educationPage() => GetPage(
+        name: HemoDialysisRouteNames.educationPage.path,
+        page: EducationPageView.new,
+        binding: EducationPageBinding(),
         customTransition: MyCustomTransition(),
         transitionDuration: const Duration(milliseconds: 200),
       );
