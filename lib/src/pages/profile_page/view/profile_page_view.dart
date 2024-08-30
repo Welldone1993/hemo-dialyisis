@@ -21,26 +21,31 @@ class ProfilePageView extends GetView<ProfilePageController> {
         ),
         action1: const AppBarBackIcon(),
         action2: const AppBarSupportIcon(),
+        hasFloatingActionButton: true,
       );
 
-  Widget _body() => FractionallySizedBox(
-        heightFactor: 0.95,
-        widthFactor: 0.95,
-        child: DecoratedBox(
+  Widget _body() => Obx(
+        () => DecoratedBox(
           decoration: Decorations.secondaryCardDecoration(),
-          child: const Row(
-            children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    Expanded(child: PrescriptionInfo()),
-                    Expanded(child: PatientInfo()),
-                  ],
-                ),
-              ),
-              Expanded(child: PersonalInfo()),
-            ],
+          child: FractionallySizedBox(
+            heightFactor: 0.95,
+            widthFactor: 0.95,
+            child: controller.canShowData.value ? _data() : const SizedBox(),
           ),
         ),
+      );
+
+  Widget _data() => const Row(
+        children: [
+          Expanded(
+            child: Column(
+              children: [
+                Expanded(flex: 3, child: PrescriptionInfo()),
+                Expanded(flex: 5, child: PatientInfo()),
+              ],
+            ),
+          ),
+          Expanded(child: PersonalInfo()),
+        ],
       );
 }

@@ -35,7 +35,7 @@ class HemoDialysisModulePages {
         page: ProfilePageView.new,
         binding: ProfilePageBinding(),
         customTransition: MyCustomTransition(),
-        transitionDuration: const Duration(milliseconds: 300),
+        transitionDuration: const Duration(milliseconds: 200),
       );
 
   static GetPage<dynamic> _volumePage() => GetPage(
@@ -78,13 +78,10 @@ class MyCustomTransition extends CustomTransition {
   ) {
     const begin = Offset(-1.0, 0.0);
     const end = Offset.zero;
-    const curve = Curves.easeInCirc;
 
     var tween = Tween(
       begin: begin,
       end: end,
-    ).chain(
-      CurveTween(curve: curve),
     );
     var offsetAnimation = animation.drive(tween);
 

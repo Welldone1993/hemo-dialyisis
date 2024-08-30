@@ -11,34 +11,33 @@ class PrescriptionInfo extends GetView<ProfilePageController> {
   @override
   Widget build(BuildContext context) => FractionallySizedBox(
         widthFactor: 0.9,
-        heightFactor: 0.9,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Expanded(child: _title()),
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Row(
                 children: [
                   Expanded(child: _prescriptionData()),
-                  Expanded(
-                      child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Expanded(child: _titleText('تاریخ نسخه:')),
-                      Expanded(child: _titleText('تاریخ اعتبار تا:')),
-                      Expanded(child: _titleText('پزشک صادر کننده:')),
-                      Expanded(
-                          child: _titleText(
-                              'تکرار درمان توصیه شده برای همودیالیز خانگی:')),
-                      Expanded(child: _titleText('زمان تقریبی هر جلسه:')),
-                    ],
-                  )),
+                  Expanded(flex: 2, child: _prescriptionTitle()),
                 ],
               ),
             )
           ],
         ),
+      );
+
+  Widget _prescriptionTitle() => Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Expanded(child: _titleText('تاریخ نسخه:')),
+          Expanded(child: _titleText('تاریخ اعتبار تا:')),
+          Expanded(child: _titleText('پزشک صادر کننده:')),
+          Expanded(
+              child: _titleText('تکرار درمان توصیه شده برای همودیالیز خانگی:')),
+          Expanded(child: _titleText('زمان تقریبی هر جلسه:')),
+        ],
       );
 
   Widget _prescriptionData() => Column(

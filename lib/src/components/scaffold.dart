@@ -152,8 +152,8 @@ class _CustomScaffoldState extends State<CustomScaffold> {
         child: LayoutBuilder(
           builder: (context, constraints) => Center(
             child: SizedBox(
-              height: constraints.maxHeight * 0.95,
-              width: constraints.maxWidth * 0.9,
+              height: constraints.maxHeight * 0.90,
+              width: constraints.maxWidth * 0.95,
               child: widget.body,
             ),
           ),

@@ -27,4 +27,11 @@ class Decorations {
         ),
 
       );
+  static creamyCardDecoration() =>const BoxDecoration(
+        color: Constants.creamyColor,
+        borderRadius: BorderRadius.all(
+          Radius.circular(Constants.xxLargeSpace),
+        ),
+
+      );
 }
