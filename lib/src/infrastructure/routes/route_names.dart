@@ -32,4 +32,13 @@ class HemoDialysisRouteNames extends Routes {
         RoutePaths.vascularAccessPage,
     RoutePaths.vascularAccessPage,
   );
+
+  static const Routes consumablesPage = Routes(
+    RoutePaths.homePage +
+        RoutePaths.volumePage +
+        RoutePaths.fontPage +
+        RoutePaths.vascularAccessPage +
+        RoutePaths.consumablesPage,
+    RoutePaths.consumablesPage,
+  );
 }

@@ -46,14 +46,14 @@ class VascularAccessPageView extends GetView<VascularAccessController> {
           Expanded(
             child: CustomButtonWithText(
               label: 'فیستول / گرافت',
-              action: () {},
+              action: controller.navigateToConsumablesPage,
             ),
           ),
           const Spacer(),
           Expanded(
             child: CustomButtonWithText.secondary(
               label: 'کتتر دائم',
-              action: () {},
+              action: controller.navigateToConsumablesPage,
             ),
           ),
           const Spacer(),

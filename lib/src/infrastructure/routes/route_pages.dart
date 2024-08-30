@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
+import 'package:hemo_dialysis/src/pages/consumables_page/view/consumable_page_view.dart';
 import 'package:hemo_dialysis/src/pages/font_page/view/font_page_view.dart';
 import 'package:hemo_dialysis/src/pages/vascular_access_page/common/vascular_access_page_binding.dart';
 import 'package:hemo_dialysis/src/pages/vascular_access_page/view/vascular_access_page_view.dart';
 
+import '../../pages/consumables_page/common/consumables_page_binding.dart';
 import '../../pages/font_page/common/font_page_binding.dart';
 import '../../pages/home/common/home_page_binding.dart';
 import '../../pages/home/view/home_page_view.dart';
@@ -40,5 +42,12 @@ class HemoDialysisModulePages {
         name: HemoDialysisRouteNames.vascularAccessPage.path,
         page: VascularAccessPageView.new,
         binding: VascularAccessPageBinding(),
+        children: [_consumablesPage()],
+      );
+
+  static GetPage<dynamic> _consumablesPage() => GetPage(
+        name: HemoDialysisRouteNames.consumablesPage.path,
+        page: ConsumablesPageView.new,
+        binding: ConsumablesPageBinding(),
       );
 }
