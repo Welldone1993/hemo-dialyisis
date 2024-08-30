@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hemo_dialysis/src/components/button_with_icon.dart';
+import 'package:hemo_dialysis/src/components/text_button.dart';
 
 import '../infrastructure/utils/constants.dart';
 
-class CustomScaffold extends StatelessWidget {
+class CustomScaffold extends StatefulWidget {
   const CustomScaffold({
     super.key,
     required this.body,
@@ -27,12 +28,18 @@ class CustomScaffold extends StatelessWidget {
   final Widget? action3;
 
   @override
+  State<CustomScaffold> createState() => _CustomScaffoldState();
+}
+
+class _CustomScaffoldState extends State<CustomScaffold> {
+  bool showMenu = false;
+
+  @override
   Widget build(BuildContext context) => Scaffold(
-        endDrawer: showEndDrawer ?? false ? _endDrawerWidget() : null,
-        appBar: _appBar(context),
+        appBar: showMenu ? _appBarWithBorder(context) : _appBarBody(context),
         body: _body(),
-        resizeToAvoidBottomInset: resizeToAvoidBottomInset,
-        floatingActionButton: hasFloatingActionButton!
+        resizeToAvoidBottomInset: widget.resizeToAvoidBottomInset,
+        floatingActionButton: widget.hasFloatingActionButton!
             ? CustomButtonWithIcon(
                 icon: CupertinoIcons.speaker_2_fill,
                 action: () {
@@ -44,12 +51,23 @@ class CustomScaffold extends StatelessWidget {
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       );
 
-  Widget _endDrawerWidget() => const Drawer(
-        backgroundColor: Constants.backgroundColor,
-        child: Placeholder(),
+  PreferredSizeWidget _appBarWithBorder(final BuildContext context) =>
+      PreferredSize(
+        preferredSize: const Size.fromHeight(100),
+        child: Container(
+          decoration: const BoxDecoration(
+            border: Border(
+              bottom: BorderSide(
+                color: Colors.black,
+                width: 1.0,
+              ),
+            ),
+          ),
+          child: _appBarBody(context),
+        ),
       );
 
-  AppBar _appBar(final BuildContext context) => AppBar(
+  AppBar _appBarBody(BuildContext context) => AppBar(
         toolbarHeight: 100,
         backgroundColor: Constants.backgroundColor,
         automaticallyImplyLeading: false,
@@ -58,16 +76,73 @@ class CustomScaffold extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
-              action1 ?? const SizedBox.shrink(),
+              widget.action1 ?? const SizedBox.shrink(),
               Constants.mediumHorizontalSpacer,
-              action2 ?? const SizedBox.shrink(),
+              widget.action2 ?? const SizedBox.shrink(),
               Constants.mediumHorizontalSpacer,
-              action3 ?? const SizedBox.shrink(),
+              widget.action3 ?? const SizedBox.shrink(),
             ],
           ),
         ),
-        actions: [if (showEndDrawer ?? false) _endDrawerBuilder()],
+        actions: [
+          if (showMenu) ..._appBarMenuItems(),
+          CustomButtonWithIcon(
+            icon: Icons.menu,
+            action: () async {
+              await Future.delayed(
+                const Duration(
+                  milliseconds: 150,
+                ),
+              );
+              setState(() {
+                showMenu = !showMenu;
+              });
+            },
+          ),
+        ],
         centerTitle: true,
+      );
+
+  List<Widget> _appBarMenuItems() => [
+        _appBarMenu(
+          action: () {},
+          text: 'درمان',
+        ),
+        _appBarMenu(
+          action: () {},
+          text: 'پشتیبانی',
+        ),
+        _appBarMenu(
+          action: () {},
+          text: 'خدمات پرستاری',
+        ),
+        _appBarMenu(
+          action: () {},
+          text: 'مشاوره پزشک',
+        ),
+        _appBarMenu(
+          action: () {},
+          text: 'فروشگاه',
+        ),
+      ];
+
+  Widget _appBarMenu({
+    required final void Function() action,
+    required final text,
+  }) =>
+      Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: Constants.mediumSpace,
+        ),
+        child: CustomTextButton(
+          action: () {},
+          text: text,
+          style: const TextStyle(
+            color: Constants.buttonSecondaryColor,
+            fontFamily: Constants.iranSansFont,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
       );
 
   Widget _endDrawerBuilder() => Builder(
@@ -82,9 +157,7 @@ class CustomScaffold extends StatelessWidget {
         ),
       );
 
-  Widget _body() => _mainBody();
-
-  Widget _mainBody() => DecoratedBox(
+  Widget _body() => DecoratedBox(
         decoration: const BoxDecoration(
           color: Constants.backgroundColor,
         ),
@@ -93,7 +166,7 @@ class CustomScaffold extends StatelessWidget {
             child: SizedBox(
               height: constraints.maxHeight * 0.95,
               width: constraints.maxWidth * 0.9,
-              child: body,
+              child: widget.body,
             ),
           ),
         ),

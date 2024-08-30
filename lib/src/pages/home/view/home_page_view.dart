@@ -66,40 +66,43 @@ class HomePageView extends GetView<HomePageController> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: Constants.mediumSpace,
-                    horizontal: Constants.mediumSpace,
-                  ),
-                  child: CustomImageProvider(
-                    imageAddress: Constants.avatarImage,
-                  ),
-                ),
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        CustomTextButton(action: () {}, text: 'پروفایل کاربری'),
-                        _profileCardDivider(),
-                        CustomTextButton(action: () {}, text: 'نسخه'),
-                        _profileCardDivider(),
-                        CustomTextButton(action: () {}, text: 'فروشگاه'),
-                        _profileCardDivider(),
-                        CustomTextButton(action: () {}, text: 'آموزش'),
-                        _profileCardDivider(),
-                        // const Spacer(),
-                      ],
-                    ),
-                  ),
-                ),
-                _profileFooter(),
+                Expanded(flex: 2,child: _profileCardAvatar()),
+                Expanded(flex: 3, child: _profileCardMenu()),
+                _profileCardFooter(),
               ],
             ),
           ),
         ),
       );
 
-  Widget _profileFooter() => FractionallySizedBox(
+  Widget _profileCardAvatar() => const Padding(
+        padding: EdgeInsets.only(
+          left: Constants.mediumSpace,
+          right: Constants.mediumSpace,
+          top: Constants.mediumSpace,
+        ),
+        child: CustomImageProvider(
+          imageAddress: Constants.avatarImage,
+        ),
+      );
+
+  Widget _profileCardMenu() => SingleChildScrollView(
+        child: Column(
+          children: [
+            CustomTextButton(action: () {}, text: 'پروفایل کاربری'),
+            _profileCardDivider(),
+            CustomTextButton(action: () {}, text: 'نسخه'),
+            _profileCardDivider(),
+            CustomTextButton(action: () {}, text: 'فروشگاه'),
+            _profileCardDivider(),
+            CustomTextButton(action: () {}, text: 'آموزش'),
+            _profileCardDivider(),
+            // const Spacer(),
+          ],
+        ),
+      );
+
+  Widget _profileCardFooter() => FractionallySizedBox(
         widthFactor: 0.8,
         child: Align(
           alignment: Alignment.bottomCenter,
@@ -154,7 +157,7 @@ class HomePageView extends GetView<HomePageController> {
           vertical: Constants.tinySpace,
         ),
         child: FractionallySizedBox(
-          widthFactor: 0.5,
+          widthFactor: 0.35,
           child: Divider(),
         ),
       );

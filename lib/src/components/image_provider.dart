@@ -9,8 +9,9 @@ class CustomImageProvider extends StatelessWidget {
   final String imageAddress;
 
   @override
-  Widget build(BuildContext context) => FittedBox(
-        fit: BoxFit.contain,
+  Widget build(BuildContext context) => AspectRatio(
+    aspectRatio: 1,
+        // fit: BoxFit.contain,
         child: Image.asset(imageAddress),
       );
 }
