@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:hemo_dialysis/src/components/image_provider.dart';
 import 'package:hemo_dialysis/src/components/button_with_text.dart';
@@ -19,6 +20,29 @@ class HomePageView extends GetView<HomePageController> {
         body: _body(context),
         showEndDrawer: true,
         hasFloatingActionButton: true,
+        action1: _appBarAvatar(),
+        action2: _appBarWelcomeText(),
+        action3: IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            FontAwesomeIcons.headset,
+          ),
+        ),
+      );
+
+  Widget _appBarWelcomeText() => const AutoSizeText(
+        'محمد عزیز، خوش آمدید.',
+        textDirection: TextDirection.rtl,
+        style: TextStyle(
+          fontFamily: Constants.iranSansFont,
+        ),
+      );
+
+  Widget _appBarAvatar() => const FractionallySizedBox(
+        heightFactor: 0.4,
+        child: CustomImageProvider(
+          imageAddress: Constants.avatarImage,
+        ),
       );
 
   Widget _body(final BuildContext context) => Padding(
@@ -43,8 +67,10 @@ class HomePageView extends GetView<HomePageController> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 const Padding(
-                  padding:
-                      EdgeInsets.symmetric(vertical: Constants.mediumSpace),
+                  padding: EdgeInsets.symmetric(
+                    vertical: Constants.mediumSpace,
+                    horizontal: Constants.mediumSpace,
+                  ),
                   child: CustomImageProvider(
                     imageAddress: Constants.avatarImage,
                   ),
@@ -82,9 +108,15 @@ class HomePageView extends GetView<HomePageController> {
             children: [
               _profileFooterButton(
                 onPressed: () {
+                  //   TODO: poshtiban
+                },
+                icon: FontAwesomeIcons.headset,
+              ),
+              _profileFooterButton(
+                onPressed: () {
                   //   TODO: ????
                 },
-                icon: Icons.support_agent_sharp,
+                icon: FontAwesomeIcons.userGear,
               ),
               _profileFooterButton(
                 onPressed: () {
