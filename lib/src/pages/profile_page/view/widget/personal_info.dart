@@ -32,33 +32,33 @@ class PersonalInfo extends GetView<ProfilePageController> {
   Widget _profileInfoData() => Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Expanded(child: _infoTitleText('نام:')),
-          Expanded(child: _infoTitleText('نام خانوادگی:')),
-          Expanded(child: _infoTitleText('سن:')),
-          Expanded(child: _infoTitleText('شماره تماس:')),
-          Expanded(child: _infoTitleText('آدرس:')),
+          Expanded(child: _titleText('نام:')),
+          Expanded(child: _titleText('نام خانوادگی:')),
+          Expanded(child: _titleText('سن:')),
+          Expanded(child: _titleText('شماره تماس:')),
+          Expanded(child: _titleText('آدرس:')),
         ],
       );
 
   Widget _profileInfoTitle() => Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Expanded(child: _infoDataText('محمد')),
-          Expanded(child: _infoDataText('آقایی')),
+          Expanded(child: _dataText('محمد')),
+          Expanded(child: _dataText('آقایی')),
           Expanded(
-            child: _infoDataText('72 سال', hasNumber: true),
+            child: _dataText('72 سال', hasNumber: true),
           ),
           Expanded(
-            child: _infoDataText('09120924245', hasNumber: true),
+            child: _dataText('09120924245', hasNumber: true),
           ),
           Expanded(
-            child: _infoDataText(' تهران، امیرآبادشمالی 18، پلاک 20',
+            child: _dataText(' تهران، امیرآبادشمالی 18، پلاک 20',
                 hasNumber: true),
           ),
         ],
       );
 
-  Widget _infoTitleText(
+  Widget _titleText(
     final String text,
   ) =>
       AutoSizeText(
@@ -71,7 +71,7 @@ class PersonalInfo extends GetView<ProfilePageController> {
         textDirection: TextDirection.rtl,
       );
 
-  Widget _infoDataText(
+  Widget _dataText(
     final String text, {
     final bool? hasNumber,
   }) =>

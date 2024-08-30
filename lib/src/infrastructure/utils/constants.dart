@@ -14,6 +14,7 @@ class Constants {
   static const Color cardBackground = Color(0xfff5f5f3);
   static const Color cardBorderColor = Color(0xff667571);
   static const Color disableColor = Color(0xff7C7B73);
+  static const Color pinkColor = Color(0xffF4B5AF);
 
   static const String startImage = 'lib/assets/start.png';
   static const String avatarImage = 'lib/assets/avatar.png';

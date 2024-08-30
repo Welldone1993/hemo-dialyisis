@@ -6,7 +6,9 @@ import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
 import '../controller/profile_page_controller.dart';
+import 'widget/patient_info.dart';
 import 'widget/personal_info.dart';
+import 'widget/prescription_info.dart';
 
 class ProfilePageView extends GetView<ProfilePageController> {
   const ProfilePageView({super.key});
@@ -26,18 +28,19 @@ class ProfilePageView extends GetView<ProfilePageController> {
         widthFactor: 0.95,
         child: DecoratedBox(
           decoration: Decorations.secondaryCardDecoration(),
-          child: Row(
+          child: const Row(
             children: [
-              Expanded(child: _prescription()),
-              const Expanded(child: PersonalInfo()),
+              Expanded(
+                child: Column(
+                  children: [
+                    Expanded(child: PrescriptionInfo()),
+                    Expanded(child: PatientInfo()),
+                  ],
+                ),
+              ),
+              Expanded(child: PersonalInfo()),
             ],
           ),
         ),
-      );
-
-  Widget _prescription() => const FractionallySizedBox(
-        widthFactor: 0.9,
-        heightFactor: 0.9,
-        child: Placeholder(),
       );
 }
