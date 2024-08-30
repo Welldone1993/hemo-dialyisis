@@ -222,7 +222,7 @@ class HomePageView extends GetView<HomePageController> {
             Expanded(
               child: CustomButtonWithText(
                 label: 'بله',
-                action: () {},
+                action: controller.navigateToVolumePage,
               ),
             ),
             Constants.giantHorizontalSpacer,
