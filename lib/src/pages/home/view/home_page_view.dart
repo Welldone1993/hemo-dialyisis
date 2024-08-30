@@ -42,7 +42,7 @@ class HomePageView extends GetView<HomePageController> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Padding(
+                const Padding(
                   padding:
                       EdgeInsets.symmetric(vertical: Constants.mediumSpace),
                   child: CustomImageProvider(
@@ -53,8 +53,7 @@ class HomePageView extends GetView<HomePageController> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        CustomTextButton(
-                            action: () {}, text: 'پروفایل کاربری'),
+                        CustomTextButton(action: () {}, text: 'پروفایل کاربری'),
                         _profileCardDivider(),
                         CustomTextButton(action: () {}, text: 'نسخه'),
                         _profileCardDivider(),
