@@ -8,6 +8,9 @@ class CustomButtonWithIcon extends StatefulWidget {
     required this.icon,
     required this.action,
     this.color,
+    this.iconColor,
+    this.height,
+    this.width,
     this.isDisable = false,
   });
 
@@ -15,6 +18,9 @@ class CustomButtonWithIcon extends StatefulWidget {
   final void Function() action;
   final bool? isDisable;
   final Color? color;
+  final Color? iconColor;
+  final double? height;
+  final double? width;
 
   @override
   State<CustomButtonWithIcon> createState() => _CustomTextButtonState();
@@ -28,8 +34,8 @@ class _CustomTextButtonState extends State<CustomButtonWithIcon> {
   Widget build(BuildContext context) => Padding(
         padding: Constants.smallPadding,
         child: SizedBox(
-          width: 40,
-          height: 40,
+          width: widget.width ?? 40,
+          height: widget.height ?? 40,
           child: _containerButton(),
         ),
       );
@@ -65,6 +71,8 @@ class _CustomTextButtonState extends State<CustomButtonWithIcon> {
             child: Center(
               child: Icon(
                 widget.icon,
+                size: widget.height != null ? (widget.height! / 2) : null,
+                color: widget.iconColor,
               ),
             ),
           ),

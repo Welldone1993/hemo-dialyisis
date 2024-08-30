@@ -145,18 +145,6 @@ class _CustomScaffoldState extends State<CustomScaffold> {
         ),
       );
 
-  Widget _endDrawerBuilder() => Builder(
-        builder: (BuildContext context) => Padding(
-          padding: const EdgeInsets.all(
-            Constants.xLargeSpace,
-          ),
-          child: CustomButtonWithIcon(
-            icon: Icons.menu,
-            action: () => Scaffold.of(context).openEndDrawer(),
-          ),
-        ),
-      );
-
   Widget _body() => DecoratedBox(
         decoration: const BoxDecoration(
           color: Constants.backgroundColor,

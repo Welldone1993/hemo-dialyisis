@@ -10,6 +10,7 @@ import 'package:hemo_dialysis/src/infrastructure/utils/constants.dart';
 import 'package:hemo_dialysis/src/infrastructure/utils/decorations.dart';
 
 import '../../../components/scaffold.dart';
+import '../../shared/view/app_bar_support_icon.dart';
 import '../controller/home_page_controller.dart';
 
 class HomePageView extends GetView<HomePageController> {
@@ -22,13 +23,9 @@ class HomePageView extends GetView<HomePageController> {
         hasFloatingActionButton: true,
         action1: _appBarAvatar(),
         action2: _appBarWelcomeText(),
-        action3: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            FontAwesomeIcons.headset,
-          ),
-        ),
+        action3: const AppBarSupportIcon(),
       );
+
 
   Widget _appBarWelcomeText() => const AutoSizeText(
         'محمد عزیز، خوش آمدید.',
@@ -66,7 +63,7 @@ class HomePageView extends GetView<HomePageController> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Expanded(flex: 2,child: _profileCardAvatar()),
+                Expanded(flex: 2, child: _profileCardAvatar()),
                 Expanded(flex: 3, child: _profileCardMenu()),
                 _profileCardFooter(),
               ],

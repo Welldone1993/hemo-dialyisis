@@ -23,7 +23,7 @@ class CustomTextButton extends StatelessWidget {
               const TextStyle(
                 fontFamily: Constants.iranSansFont,
                 color: Constants.whiteColor,
-                fontWeight: FontWeight.normal,
+                fontWeight: FontWeight.w500,
               ),
         ),
       );
