@@ -13,8 +13,10 @@ class Constants {
   static const Color deSelectedChipBorderColor = Color(0xffC9CED7);
   static const Color cardBackground = Color(0xfff5f5f3);
   static const Color cardBorderColor = Color(0xff667571);
+  static const Color disableColor = Color(0xff7C7B73);
 
   static const String startImage = 'lib/assets/start.png';
+  static const String avatarImage = 'lib/assets/avatar.png';
 
   static const double tinySpace = 2;
   static const double smallSpace = 4;
@@ -47,8 +49,33 @@ class Constants {
   static const EdgeInsetsDirectional giantPadding =
       EdgeInsetsDirectional.all(giantSpace);
 
+  static const String iranSansFont = 'IranSans';
+  static const String iranSansFaNumFont = 'IranSansFaNum';
+
   static const boldTextStyle = TextStyle(
-    fontWeight: FontWeight.bold,
-    color: Colors.white,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+      fontFamily: iranSansFont);
+
+  static const defaultTextStyle = TextStyle(
+    fontFamily: iranSansFont,
+    fontSize: 20
   );
+
+  static const disableTextStyle = TextStyle(
+    fontFamily: iranSansFont,
+    color: disableColor,
+  );
+
+  static width(
+    final BuildContext context, {
+    double? fraction,
+  }) =>
+      MediaQuery.of(context).size.width / (fraction ?? 1);
+
+  static height(
+    final BuildContext context, {
+    double? fraction,
+  }) =>
+      MediaQuery.of(context).size.height / (fraction ?? 1);
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../infrastructure/utils/constants.dart';
+
 class CustomImageProvider extends StatelessWidget {
   const CustomImageProvider({
     super.key,
@@ -10,8 +12,8 @@ class CustomImageProvider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SizedBox(
-        height: MediaQuery.of(context).size.height / 5,
-        width: MediaQuery.of(context).size.width / 10,
+        height: Constants.height(context, fraction: 5),
+        width: Constants.width(context, fraction: 10),
         child: DecoratedBox(
           decoration: BoxDecoration(
             image: DecorationImage(

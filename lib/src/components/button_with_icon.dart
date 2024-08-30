@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../infrastructure/utils/constants.dart';
 
-class CustomIconButton extends StatefulWidget {
-  const CustomIconButton({
+class CustomButtonWithIcon extends StatefulWidget {
+  const CustomButtonWithIcon({
     super.key,
     required this.icon,
     required this.action,
@@ -17,10 +17,10 @@ class CustomIconButton extends StatefulWidget {
   final Color? color;
 
   @override
-  State<CustomIconButton> createState() => _CustomTextButtonState();
+  State<CustomButtonWithIcon> createState() => _CustomTextButtonState();
 }
 
-class _CustomTextButtonState extends State<CustomIconButton> {
+class _CustomTextButtonState extends State<CustomButtonWithIcon> {
   double _padding = 6;
   double _margin = 0;
 

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hemo_dialysis/src/components/icon_button.dart';
+import 'package:hemo_dialysis/src/components/button_with_icon.dart';
 
 import '../infrastructure/utils/constants.dart';
 
@@ -33,7 +33,7 @@ class CustomScaffold extends StatelessWidget {
         body: _body(),
         resizeToAvoidBottomInset: resizeToAvoidBottomInset,
         floatingActionButton: hasFloatingActionButton!
-            ? CustomIconButton(
+            ? CustomButtonWithIcon(
                 icon: CupertinoIcons.speaker_2_fill,
                 action: () {
                   //   TODO: action in mute button
@@ -53,7 +53,7 @@ class CustomScaffold extends StatelessWidget {
         toolbarHeight: 100,
         backgroundColor: Constants.backgroundColor,
         automaticallyImplyLeading: false,
-        leadingWidth: MediaQuery.of(context).size.width / 2,
+        leadingWidth: Constants.width(context, fraction: 2),
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -75,7 +75,7 @@ class CustomScaffold extends StatelessWidget {
           padding: const EdgeInsets.all(
             Constants.xLargeSpace,
           ),
-          child: CustomIconButton(
+          child: CustomButtonWithIcon(
             icon: Icons.menu,
             action: () => Scaffold.of(context).openEndDrawer(),
           ),
@@ -89,9 +89,12 @@ class CustomScaffold extends StatelessWidget {
           color: Constants.backgroundColor,
         ),
         child: LayoutBuilder(
-          builder: (context, constraints) => Align(
-            alignment: Alignment.topCenter,
-            child: body,
+          builder: (context, constraints) => Center(
+            child: SizedBox(
+              height: constraints.maxHeight * 0.95,
+              width: constraints.maxWidth * 0.9,
+              child: body,
+            ),
           ),
         ),
       );
