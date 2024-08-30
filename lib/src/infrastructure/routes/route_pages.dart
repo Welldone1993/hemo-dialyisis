@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:hemo_dialysis/src/pages/font_page/view/font_page_view.dart';
+import 'package:hemo_dialysis/src/pages/vascular_access_page/common/vascular_access_page_binding.dart';
+import 'package:hemo_dialysis/src/pages/vascular_access_page/view/vascular_access_page_view.dart';
 
 import '../../pages/font_page/common/font_page_binding.dart';
 import '../../pages/home/common/home_page_binding.dart';
@@ -21,14 +23,22 @@ class HemoDialysisModulePages {
       );
 
   static GetPage<dynamic> _volumePage() => GetPage(
-      name: HemoDialysisRouteNames.volumePage.path,
-      page: VolumePageView.new,
-      binding: VolumePageBinding(),
-      children: [_fontPage()]);
+        name: HemoDialysisRouteNames.volumePage.path,
+        page: VolumePageView.new,
+        binding: VolumePageBinding(),
+        children: [_fontPage()],
+      );
 
   static GetPage<dynamic> _fontPage() => GetPage(
         name: HemoDialysisRouteNames.fontPage.path,
         page: FontPageView.new,
         binding: FontPageBinding(),
+        children: [_vascularAccessPage()],
+      );
+
+  static GetPage<dynamic> _vascularAccessPage() => GetPage(
+        name: HemoDialysisRouteNames.vascularAccessPage.path,
+        page: VascularAccessPageView.new,
+        binding: VascularAccessPageBinding(),
       );
 }

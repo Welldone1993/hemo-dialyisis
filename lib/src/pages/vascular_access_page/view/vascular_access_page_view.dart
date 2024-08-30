@@ -1,16 +1,18 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+
+import '../../../components/button_with_icon.dart';
 import '../../../components/button_with_text.dart';
 import '../../../components/scaffold.dart';
 import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
-import '../controller/font_page_controller.dart';
+import '../controller/vascular_access_controller.dart';
 
-class FontPageView extends GetView<FontPageController> {
-  const FontPageView({super.key});
+class VascularAccessPageView extends GetView<VascularAccessController> {
+  const VascularAccessPageView({super.key});
 
   @override
   Widget build(BuildContext context) => CustomScaffold(
@@ -30,41 +32,39 @@ class FontPageView extends GetView<FontPageController> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.end,
-              children: [_fontHintText(), _actionButtons()],
+              children: [_hintText(), _actionButtons()],
             ),
           ),
         ),
       );
 
-  Widget _actionButtons() => Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          CustomButtonWithText(
-            label: 'بله',
-            action: controller.navigateToVascularAccessPage,
-          ),
-          CustomButtonWithText.secondary(
-            label: 'بزرگتر شود',
-            action: () {},
-          ),
-          CustomButtonWithText.outline(
-            label: 'کوچکتر شود',
-            action: () {},
-          ),
-        ],
-      );
+  Row _actionButtons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        CustomButtonWithText(
+          label: 'فیستول / گرافت',
+          action: () {},
+        ),
+        CustomButtonWithText.secondary(
+          label: 'کتتر دائم',
+          action: () {},
+        ),
+      ],
+    );
+  }
 
-  Widget _fontHintText() => const Column(
+  Widget _hintText() => const Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           AutoSizeText(
-            'تنظیم نوشته ها',
+            'دسترسی عروقی',
             style: Constants.disableTextStyle,
             textDirection: TextDirection.rtl,
           ),
           Constants.mediumHorizontalSpacer,
           AutoSizeText(
-            'اندازه نوشته ها مناسب است؟',
+            'نوع دسترسی خود را انتخاب کنید.',
             style: Constants.defaultTextStyle,
             textDirection: TextDirection.rtl,
           ),
