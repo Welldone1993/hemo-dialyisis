@@ -63,7 +63,6 @@ class Constants {
   );
   static const thinTextStyle = TextStyle(
     fontFamily: iranSansFont,
-
   );
 
   static const disableTextStyle = TextStyle(

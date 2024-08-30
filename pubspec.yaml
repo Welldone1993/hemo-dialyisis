@@ -46,7 +46,16 @@ flutter:
 
     - family: IranSansFaNum
       fonts:
+        - asset: lib/assets/fonts/iran_sans.ttf
+        - asset: lib/assets/fonts/iran_sans_fa_num_ultra_light.ttf
+          weight: 100
+        - asset: lib/assets/fonts/iran_sans_fa_num_light.ttf
+          weight: 300
         - asset: lib/assets/fonts/iran_sans_fa_num_medium.ttf
+          weight: 500
+        - asset: lib/assets/fonts/iran_sans_fa_num_bold.ttf
+          weight: 900
+#        - asset: lib/assets/fonts/iran_sans_fa_num_medium.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
