@@ -32,37 +32,45 @@ class VolumePageView extends GetView<VolumePageController> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [_volumePart(), _actionButtons()],
+              children: [
+                Expanded(child: _volumePart()),
+                Expanded(child: _actionButtons()),
+              ],
             ),
           ),
         ),
       );
 
-  Row _actionButtons() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        CustomButtonWithText(
-          label: 'بله',
-          action: controller.navigateToFontPage,
-        ),
-        CustomButtonWithText.secondary(
-          label: 'بیشتر شود',
-          action: () {},
-        ),
-        CustomButtonWithText.outline(
-          label: 'کمتر شود',
-          action: () {},
-        ),
-      ],
-    );
-  }
-
-  Widget _volumePart() => Row(
+  Widget _actionButtons() => Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          Expanded(
+            child: CustomButtonWithText(
+              label: 'بله',
+              action: controller.navigateToFontPage,
+            ),
+          ),
+          const Spacer(),
+          Expanded(
+            child: CustomButtonWithText.secondary(
+              label: 'بیشتر شود',
+              action: () {},
+            ),
+          ),
+          const Spacer(),
+          Expanded(
+            child: CustomButtonWithText.outline(
+              label: 'کمتر شود',
+              action: () {},
+            ),
+          ),
+        ],
+      );
+
+  Widget _volumePart() => Row(
+        children: [
           _volumeButton(),
-          _hintText(),
+          Expanded(flex: 3, child: _hintText()),
         ],
       );
 
@@ -79,6 +87,7 @@ class VolumePageView extends GetView<VolumePageController> {
 
   Widget _hintText() => const Column(
         crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           AutoSizeText(
             'تنظیم صدا: علامت صدا رو لمس کن.',

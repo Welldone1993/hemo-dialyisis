@@ -2,7 +2,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-import '../../../components/button_with_icon.dart';
 import '../../../components/button_with_text.dart';
 import '../../../components/scaffold.dart';
 import '../../../infrastructure/utils/constants.dart';
@@ -32,27 +31,34 @@ class VascularAccessPageView extends GetView<VascularAccessController> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.end,
-              children: [_hintText(), _actionButtons()],
+              children: [
+                Expanded(child: _hintText()),
+                Expanded(child: _actionButtons()),
+              ],
             ),
           ),
         ),
       );
 
-  Row _actionButtons() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        CustomButtonWithText(
-          label: 'فیستول / گرافت',
-          action: () {},
-        ),
-        CustomButtonWithText.secondary(
-          label: 'کتتر دائم',
-          action: () {},
-        ),
-      ],
-    );
-  }
+  Widget _actionButtons() => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Expanded(
+            child: CustomButtonWithText(
+              label: 'فیستول / گرافت',
+              action: () {},
+            ),
+          ),
+          const Spacer(),
+          Expanded(
+            child: CustomButtonWithText.secondary(
+              label: 'کتتر دائم',
+              action: () {},
+            ),
+          ),
+          const Spacer(),
+        ],
+      );
 
   Widget _hintText() => const Column(
         crossAxisAlignment: CrossAxisAlignment.end,

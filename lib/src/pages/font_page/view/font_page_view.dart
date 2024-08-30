@@ -30,7 +30,10 @@ class FontPageView extends GetView<FontPageController> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.end,
-              children: [_fontHintText(), _actionButtons()],
+              children: [
+                Expanded(child: _fontHintText()),
+                Expanded(child: _actionButtons()),
+              ],
             ),
           ),
         ),
@@ -39,17 +42,25 @@ class FontPageView extends GetView<FontPageController> {
   Widget _actionButtons() => Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          CustomButtonWithText(
-            label: 'بله',
-            action: controller.navigateToVascularAccessPage,
+          Expanded(
+            child: CustomButtonWithText(
+              label: 'بله',
+              action: controller.navigateToVascularAccessPage,
+            ),
           ),
-          CustomButtonWithText.secondary(
-            label: 'بزرگتر شود',
-            action: () {},
+          const Spacer(),
+          Expanded(
+            child: CustomButtonWithText.secondary(
+              label: 'بزرگتر شود',
+              action: () {},
+            ),
           ),
-          CustomButtonWithText.outline(
-            label: 'کوچکتر شود',
-            action: () {},
+          const Spacer(),
+          Expanded(
+            child: CustomButtonWithText.outline(
+              label: 'کوچکتر شود',
+              action: () {},
+            ),
           ),
         ],
       );
