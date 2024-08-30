@@ -6,6 +6,8 @@ import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
 import '../controller/education_page_controller.dart';
+import 'widget/device_info.dart';
+import 'widget/education_part.dart';
 
 class EducationPageView extends GetView<EducationPageController> {
   const EducationPageView({super.key});
@@ -29,5 +31,10 @@ class EducationPageView extends GetView<EducationPageController> {
         ),
       );
 
-  Widget _data() => const Placeholder();
+  Widget _data() => const Row(
+        children: [
+          Expanded(child: EducationPart()),
+          Expanded(child: DeviceInfo()),
+        ],
+      );
 }

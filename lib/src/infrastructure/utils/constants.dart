@@ -19,6 +19,7 @@ class Constants {
 
   static const String startImage = 'lib/assets/start.png';
   static const String avatarImage = 'lib/assets/avatar.png';
+  static const String deviceImage = 'lib/assets/device.png';
 
   static const double tinySpace = 2;
   static const double smallSpace = 4;
