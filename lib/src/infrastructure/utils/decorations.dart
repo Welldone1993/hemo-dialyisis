@@ -19,4 +19,12 @@ class Decorations {
           width: 2,
         ),
       );
+
+  static secondaryCardDecoration() =>const BoxDecoration(
+        color: Constants.cardBorderColor,
+        borderRadius: BorderRadius.all(
+          Radius.circular(Constants.xxLargeSpace),
+        ),
+
+      );
 }

@@ -56,7 +56,7 @@ class HomePageView extends GetView<HomePageController> {
   Widget _profileCard() => FractionallySizedBox(
         heightFactor: 1,
         child: DecoratedBox(
-          decoration: _profileDecoration(),
+          decoration: Decorations.secondaryCardDecoration(),
           child: FractionallySizedBox(
             heightFactor: 0.9,
             child: Column(
@@ -85,9 +85,14 @@ class HomePageView extends GetView<HomePageController> {
   Widget _profileCardMenu() => SingleChildScrollView(
         child: Column(
           children: [
-            CustomTextButton(action: () {}, text: 'پروفایل کاربری'),
+            CustomTextButton(
+              action: controller.navigateToProfilePage,
+              text: 'پروفایل کاربری',
+              heroTag: 'profile',
+            ),
             _profileCardDivider(),
-            CustomTextButton(action: () {}, text: 'نسخه'),
+            CustomTextButton(
+                action: controller.navigateToProfilePage, text: 'نسخه'),
             _profileCardDivider(),
             CustomTextButton(action: () {}, text: 'فروشگاه'),
             _profileCardDivider(),
@@ -156,11 +161,6 @@ class HomePageView extends GetView<HomePageController> {
           widthFactor: 0.35,
           child: Divider(),
         ),
-      );
-
-  BoxDecoration _profileDecoration() => const BoxDecoration(
-        color: Constants.cardBorderColor,
-        borderRadius: BorderRadius.all(Radius.circular(Constants.xxLargeSpace)),
       );
 
   Widget _startProcessCard(final BuildContext context) => FractionallySizedBox(
