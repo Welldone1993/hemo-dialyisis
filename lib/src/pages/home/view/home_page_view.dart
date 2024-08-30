@@ -33,64 +33,74 @@ class HomePageView extends GetView<HomePageController> {
         ),
       );
 
-  Widget _profileCard() => DecoratedBox(
-        decoration: _profileDecoration(),
-        child: Column(
-          children: [
-            const Expanded(
-              flex: 3,
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: Constants.mediumSpace),
-                child: CustomImageProvider(
-                  imageAddress: Constants.avatarImage,
+  Widget _profileCard() => FractionallySizedBox(
+        heightFactor: 1,
+        child: DecoratedBox(
+          decoration: _profileDecoration(),
+          child: FractionallySizedBox(
+            heightFactor: 0.9,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: Constants.mediumSpace),
+                  child: CustomImageProvider(
+                    imageAddress: Constants.avatarImage,
+                  ),
                 ),
-              ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        CustomTextButton(
+                            action: () {}, text: 'پروفایل کاربری'),
+                        _profileCardDivider(),
+                        CustomTextButton(action: () {}, text: 'نسخه'),
+                        _profileCardDivider(),
+                        CustomTextButton(action: () {}, text: 'فروشگاه'),
+                        _profileCardDivider(),
+                        CustomTextButton(action: () {}, text: 'آموزش'),
+                        _profileCardDivider(),
+                        // const Spacer(),
+                      ],
+                    ),
+                  ),
+                ),
+                _profileFooter(),
+              ],
             ),
-            Expanded(
-              flex: 15,
-              child: Column(
-                children: [
-                  CustomTextButton(action: () {}, text: 'پروفایل کاربری'),
-                  _profileCardDivider(),
-                  CustomTextButton(action: () {}, text: 'نسخه'),
-                  _profileCardDivider(),
-                  CustomTextButton(action: () {}, text: 'فروشگاه'),
-                  _profileCardDivider(),
-                  CustomTextButton(action: () {}, text: 'آموزش'),
-                  _profileCardDivider(),
-                  const Spacer(),
-                  _profileFooter(),
-                ],
-              ),
-            ),
-          ],
+          ),
         ),
       );
 
-  Widget _profileFooter() => Padding(
-        padding: const EdgeInsets.all(Constants.largeSpace),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            _profileFooterButton(
-              onPressed: () {
-                //   TODO: ????
-              },
-              icon: Icons.support_agent_sharp,
-            ),
-            _profileFooterButton(
-              onPressed: () {
-                //   TODO: poshtibani
-              },
-              icon: CupertinoIcons.question_square,
-            ),
-            _profileFooterButton(
-              onPressed: () {
-                //   TODO: setting page
-              },
-              icon: CupertinoIcons.gear,
-            )
-          ],
+  Widget _profileFooter() => FractionallySizedBox(
+        widthFactor: 0.8,
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              _profileFooterButton(
+                onPressed: () {
+                  //   TODO: ????
+                },
+                icon: Icons.support_agent_sharp,
+              ),
+              _profileFooterButton(
+                onPressed: () {
+                  //   TODO: poshtibani
+                },
+                icon: CupertinoIcons.question_square,
+              ),
+              _profileFooterButton(
+                onPressed: () {
+                  //   TODO: setting page
+                },
+                icon: CupertinoIcons.gear,
+              )
+            ],
+          ),
         ),
       );
 
@@ -98,12 +108,13 @@ class HomePageView extends GetView<HomePageController> {
     required final void Function()? onPressed,
     required final IconData icon,
   }) =>
-      IconButton(
-        onPressed: () {},
-        icon: Icon(
-          icon,
-          color: Constants.whiteColor,
-          size: 20,
+      Expanded(
+        child: IconButton(
+          onPressed: () {},
+          icon: Icon(
+            icon,
+            color: Constants.whiteColor,
+          ),
         ),
       );
 
