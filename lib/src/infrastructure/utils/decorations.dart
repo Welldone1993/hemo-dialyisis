@@ -20,18 +20,17 @@ class Decorations {
         ),
       );
 
-  static secondaryCardDecoration() =>const BoxDecoration(
+  static secondaryCardDecoration() => const BoxDecoration(
         color: Constants.cardBorderColor,
         borderRadius: BorderRadius.all(
           Radius.circular(Constants.xxLargeSpace),
         ),
-
       );
-  static creamyCardDecoration() =>const BoxDecoration(
+
+  static creamyCardDecoration() => const BoxDecoration(
         color: Constants.creamyColor,
         borderRadius: BorderRadius.all(
           Radius.circular(Constants.xxLargeSpace),
         ),
-
       );
 }

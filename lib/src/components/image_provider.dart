@@ -4,13 +4,15 @@ class CustomImageProvider extends StatelessWidget {
   const CustomImageProvider({
     super.key,
     required this.imageAddress,
+    this.aspectRatio,
   });
 
   final String imageAddress;
+  final double? aspectRatio;
 
   @override
   Widget build(BuildContext context) => AspectRatio(
-        aspectRatio: 1,
+        aspectRatio: aspectRatio ?? 1,
         child: Image.asset(imageAddress),
       );
 }

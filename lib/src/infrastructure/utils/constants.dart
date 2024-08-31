@@ -16,10 +16,14 @@ class Constants {
   static const Color disableColor = Color(0xff7C7B73);
   static const Color pinkColor = Color(0xffF4B5AF);
   static const Color creamyColor = Color(0xffD8D7CD);
+  static const Color categoryTitleColor = Color(0xff217868);
 
   static const String startImage = 'lib/assets/start.png';
   static const String avatarImage = 'lib/assets/avatar.png';
   static const String deviceImage = 'lib/assets/device.png';
+  static const String disinfectionSuppliesImage = 'lib/assets/disinfection_supplies.png';
+  static const String consumablesImage = 'lib/assets/consumables.png';
+  static const String medicineImage = 'lib/assets/medicines.png';
 
   static const double tinySpace = 2;
   static const double smallSpace = 4;
