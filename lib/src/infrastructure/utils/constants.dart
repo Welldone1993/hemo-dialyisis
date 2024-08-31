@@ -17,11 +17,13 @@ class Constants {
   static const Color pinkColor = Color(0xffF4B5AF);
   static const Color creamyColor = Color(0xffD8D7CD);
   static const Color categoryTitleColor = Color(0xff217868);
+  static const Color starColor = Color(0xffFF845E);
 
   static const String startImage = 'lib/assets/start.png';
   static const String avatarImage = 'lib/assets/avatar.png';
   static const String deviceImage = 'lib/assets/device.png';
-  static const String disinfectionSuppliesImage = 'lib/assets/disinfection_supplies.png';
+  static const String disinfectionSuppliesImage =
+      'lib/assets/disinfection_supplies.png';
   static const String consumablesImage = 'lib/assets/consumables.png';
   static const String medicineImage = 'lib/assets/medicines.png';
   static const String bicarbProduct1Image = 'lib/assets/bicarb_product_1.png';
@@ -30,6 +32,8 @@ class Constants {
   static const String cartridgeRemoveBag2Image = 'lib/assets/cartridge_2.png';
   static const String cartridgeRemoveBag3Image = 'lib/assets/cartridge_3.png';
   static const String dialysisFilterImage = 'lib/assets/dialysis_filter.png';
+  static const String storeItemBackgroundImage =
+      'lib/assets/store_item_background.png';
 
   static const double tinySpace = 2;
   static const double smallSpace = 4;
@@ -70,10 +74,8 @@ class Constants {
       color: Colors.white,
       fontFamily: iranSansFont);
 
-  static const defaultTextStyle = TextStyle(
-    fontFamily: iranSansFont,
-    fontSize: 20
-  );
+  static const defaultTextStyle =
+      TextStyle(fontFamily: iranSansFont, fontSize: 20);
   static const thinTextStyle = TextStyle(
     fontFamily: iranSansFont,
   );

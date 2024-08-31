@@ -2,7 +2,7 @@ class StoreItemViewModel {
   final int id;
   final String title;
   final String image;
-  final double price;
+  final String price;
   final double rate;
   final int rateCount;
   final String company;

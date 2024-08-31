@@ -48,10 +48,12 @@ class StorePageView extends GetView<StorePageController> {
 
   Widget _storeItems() => GridView.count(
         crossAxisCount: 3,
+        padding: Constants.mediumPadding,
+         childAspectRatio: 0.6,
         children: controller.storeItems
             .map(
               (item) => StoreItem(
-                storeItem: item,
+                item: item,
               ),
             )
             .toList(),
