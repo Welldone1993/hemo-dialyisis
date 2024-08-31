@@ -1,0 +1,81 @@
+import '../../../infrastructure/utils/constants.dart';
+import '../model/store_item_view_model.dart';
+
+class StorePageRepository {
+  List<StoreItemViewModel> getStoreItems() {
+    return [
+      StoreItemViewModel(
+        id: 1,
+        title: 'محلول ضد عفونی',
+        image: Constants.bicarbProduct1Image,
+        company: 'محصول شرکت داروسازی رازی',
+        hasDelivery: true,
+        hasDiscount: true,
+        price: 110000,
+        rate: 4.5,
+        rateCount: 540,
+        volume: 'حجم 4 لیتری',
+      ),
+      StoreItemViewModel(
+        id: 2,
+        title: 'محلول ضد عفونی',
+        image: Constants.bicarbProduct1Image,
+        company: 'محصول شرکت داروسازی رازی',
+        hasDelivery: true,
+        hasDiscount: true,
+        price: 110000,
+        rate: 4.5,
+        rateCount: 540,
+        volume: 'حجم 4 لیتری',
+      ),
+      StoreItemViewModel(
+        id: 3,
+        title: 'محلول ضد عفونی',
+        image: Constants.bicarbProduct1Image,
+        company: 'محصول شرکت داروسازی رازی',
+        hasDelivery: true,
+        hasDiscount: true,
+        price: 110000,
+        rate: 4.5,
+        rateCount: 540,
+        volume: 'حجم 4 لیتری',
+      ),
+      StoreItemViewModel(
+        id: 4,
+        title: 'محلول ضد عفونی',
+        image: Constants.bicarbProduct1Image,
+        company: 'محصول شرکت داروسازی رازی',
+        hasDelivery: true,
+        hasDiscount: true,
+        price: 110000,
+        rate: 4.5,
+        rateCount: 540,
+        volume: 'حجم 4 لیتری',
+      ),
+      StoreItemViewModel(
+        id: 5,
+        title: 'محلول ضد عفونی',
+        image: Constants.bicarbProduct1Image,
+        company: 'محصول شرکت داروسازی رازی',
+        hasDelivery: true,
+        hasDiscount: true,
+        price: 110000,
+        rate: 4.5,
+        rateCount: 540,
+        volume: 'حجم 4 لیتری',
+      ),
+      StoreItemViewModel(
+        id: 6,
+        title: 'محلول ضد عفونی',
+        image: Constants.bicarbProduct1Image,
+        company: 'محصول شرکت داروسازی رازی',
+        hasDelivery: true,
+        hasDiscount: true,
+        price: 110000,
+        rate: 4.5,
+        rateCount: 540,
+        volume: 'حجم 4 لیتری',
+      ),
+    ];
+  }
+}

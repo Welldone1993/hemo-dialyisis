@@ -36,14 +36,7 @@ class StorePageView extends GetView<StorePageController> {
                     const Expanded(child: Placeholder()),
                     Expanded(
                       flex: 7,
-                      child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                        ),
-                        itemBuilder: (context, index) => const StoreItem(),
-                        itemCount: 6,
-                      ),
+                      child: _storeItems(),
                     ),
                   ],
                 ),
@@ -51,6 +44,17 @@ class StorePageView extends GetView<StorePageController> {
             ),
           ),
         ],
+      );
+
+  Widget _storeItems() => GridView.count(
+        crossAxisCount: 3,
+        children: controller.storeItems
+            .map(
+              (item) => StoreItem(
+                storeItem: item,
+              ),
+            )
+            .toList(),
       );
 
   Widget _categoryList() => SingleChildScrollView(

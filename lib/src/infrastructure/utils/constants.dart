@@ -24,6 +24,7 @@ class Constants {
   static const String disinfectionSuppliesImage = 'lib/assets/disinfection_supplies.png';
   static const String consumablesImage = 'lib/assets/consumables.png';
   static const String medicineImage = 'lib/assets/medicines.png';
+  static const String bicarbProduct1Image = 'lib/assets/bicarb_product_1.png';
 
   static const double tinySpace = 2;
   static const double smallSpace = 4;
