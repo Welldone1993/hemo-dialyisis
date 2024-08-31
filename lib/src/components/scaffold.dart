@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:hemo_dialysis/src/infrastructure/routes/route_names.dart';
 
 import '../infrastructure/utils/constants.dart';
 import 'button_with_icon.dart';
@@ -121,7 +123,7 @@ class _CustomScaffoldState extends State<CustomScaffold> {
           text: 'مشاوره پزشک',
         ),
         _appBarMenu(
-          action: () {},
+          action: () => Get.toNamed(HemoDialysisRouteNames.storePage.uri),
           text: 'فروشگاه',
         ),
       ];
@@ -135,7 +137,7 @@ class _CustomScaffoldState extends State<CustomScaffold> {
           horizontal: Constants.mediumSpace,
         ),
         child: CustomTextButton(
-          action: () {},
+          action: action,
           text: text,
           style: const TextStyle(
             color: Constants.buttonSecondaryColor,

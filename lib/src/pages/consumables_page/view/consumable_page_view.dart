@@ -1,15 +1,15 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:hemo_dialysis/src/components/chip.dart';
-import 'package:hemo_dialysis/src/components/scaffold.dart';
-import 'package:hemo_dialysis/src/infrastructure/utils/constants.dart';
-import 'package:hemo_dialysis/src/pages/consumables_page/controller/consumable_page_controller.dart';
 
 import '../../../components/button_with_text.dart';
+import '../../../components/chip.dart';
+import '../../../components/scaffold.dart';
+import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
+import '../controller/consumable_page_controller.dart';
 import '../model/consumable_model.dart';
 
 class ConsumablesPageView extends GetView<ConsumablesPageController> {
@@ -163,7 +163,7 @@ class ConsumablesPageView extends GetView<ConsumablesPageController> {
           Expanded(
             child: CustomButtonWithText.outline(
               label: 'فروشگاه',
-              action: () {},
+              action: controller.navigateToStorePage,
             ),
           ),
         ],

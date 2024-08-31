@@ -11,7 +11,7 @@ class HemoDialysis extends StatelessWidget {
         getPages: [
           ...HemoDialysisModulePages.routes,
         ],
-        initialRoute: '/home-Page',
+        initialRoute: '/home',
         debugShowCheckedModeBanner: false,
       );
 }

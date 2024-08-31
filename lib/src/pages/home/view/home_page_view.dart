@@ -95,7 +95,10 @@ class HomePageView extends GetView<HomePageController> {
               text: 'نسخه',
             ),
             _profileCardDivider(),
-            CustomTextButton(action: () {}, text: 'فروشگاه'),
+            CustomTextButton(
+              action: controller.navigateToStorePage,
+              text: 'فروشگاه',
+            ),
             _profileCardDivider(),
             CustomTextButton(
               action: controller.navigateToEducationPage,

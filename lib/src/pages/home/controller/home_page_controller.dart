@@ -11,4 +11,7 @@ class HomePageController extends GetxController {
 
   void navigateToEducationPage() =>
       Get.toNamed(HemoDialysisRouteNames.educationPage.uri);
+
+  void navigateToStorePage() =>
+      Get.toNamed(HemoDialysisRouteNames.storePage.uri);
 }

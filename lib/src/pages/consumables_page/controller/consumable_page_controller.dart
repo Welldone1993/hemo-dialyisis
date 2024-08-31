@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:hemo_dialysis/src/pages/consumables_page/model/consumable_model.dart';
 
+import '../../../infrastructure/routes/route_names.dart';
+
 class ConsumablesPageController extends GetxController {
   final List<ConsumableModel> medicines = [
     ConsumableModel(id: 4, name: 'هپارین'),
@@ -25,4 +27,7 @@ class ConsumablesPageController extends GetxController {
     ConsumableModel(id: 14, name: 'قیچی'),
     ConsumableModel(id: 13, name: 'چسب'),
   ];
+
+  void navigateToStorePage() =>
+      Get.toNamed(HemoDialysisRouteNames.storePage.uri);
 }
