@@ -82,7 +82,7 @@ class StoreItem extends GetView<StorePageController> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            AutoSizeText(
+            const AutoSizeText(
               'تومان',
               style: TextStyle(
                   fontFamily: Constants.iranSansFont,
@@ -103,11 +103,10 @@ class StoreItem extends GetView<StorePageController> {
             AutoSizeText(
               item.title,
               style: const TextStyle(
-                fontFamily: Constants.iranSansFont,
-                color: Constants.whiteColor,
-                fontSize: 12
-              ),
-               overflow: TextOverflow.ellipsis,
+                  fontFamily: Constants.iranSansFont,
+                  color: Constants.whiteColor,
+                  fontSize: 12),
+              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),
