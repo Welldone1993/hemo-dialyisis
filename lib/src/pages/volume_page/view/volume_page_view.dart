@@ -91,13 +91,21 @@ class VolumePageView extends GetView<VolumePageController> {
         children: [
           AutoSizeText(
             'تنظیم صدا: علامت صدا رو لمس کن.',
-            style: Constants.disableTextStyle,
+            style: TextStyle(
+              fontFamily: Constants.iranSansFont,
+              color: Constants.disableColor,
+              fontWeight: FontWeight.w500,
+            ),
             textDirection: TextDirection.rtl,
           ),
-          Constants.mediumHorizontalSpacer,
+          Constants.mediumVerticalSpacer,
           AutoSizeText(
             'صدای زنگ رو میشنوی؟',
-            style: Constants.defaultTextStyle,
+            style: TextStyle(
+              fontFamily: Constants.iranSansFont,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
             textDirection: TextDirection.rtl,
           ),
         ],

@@ -20,22 +20,22 @@ class _CustomTextButtonState extends State<CustomChip> {
   bool _isSelected = false;
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: Constants.smallPadding,
-        child: SizedBox(
-          width: MediaQuery.of(context).devicePixelRatio / 0.01,
-          height: 50,
-          child: _chip(),
-        ),
-      );
+  Widget build(BuildContext context) => _chip();
 
   Widget _chip() => InputChip(
         elevation: 0,
-        label: Text(widget.label),
+        label: Text(
+          widget.label,
+          style: const TextStyle(
+            fontFamily: Constants.iranSansFont,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
         selected: _isSelected,
         onSelected: (value) {
           setState(() {
             _isSelected = !_isSelected;
+            widget.action();
           });
         },
         backgroundColor: Constants.deSelectedChipColor,

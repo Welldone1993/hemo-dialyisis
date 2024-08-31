@@ -65,13 +65,21 @@ class VascularAccessPageView extends GetView<VascularAccessController> {
         children: [
           AutoSizeText(
             'دسترسی عروقی',
-            style: Constants.disableTextStyle,
+            style: TextStyle(
+              fontFamily: Constants.iranSansFont,
+              color: Constants.disableColor,
+              fontWeight: FontWeight.w500,
+            ),
             textDirection: TextDirection.rtl,
           ),
-          Constants.mediumHorizontalSpacer,
+          Constants.mediumVerticalSpacer,
           AutoSizeText(
             'نوع دسترسی خود را انتخاب کنید.',
-            style: Constants.defaultTextStyle,
+            style: TextStyle(
+              fontFamily: Constants.iranSansFont,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
             textDirection: TextDirection.rtl,
           ),
         ],

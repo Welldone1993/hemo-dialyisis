@@ -70,13 +70,21 @@ class FontPageView extends GetView<FontPageController> {
         children: [
           AutoSizeText(
             'تنظیم نوشته ها',
-            style: Constants.disableTextStyle,
+            style: TextStyle(
+              fontFamily: Constants.iranSansFont,
+              color: Constants.disableColor,
+              fontWeight: FontWeight.w500,
+            ),
             textDirection: TextDirection.rtl,
           ),
-          Constants.mediumHorizontalSpacer,
+          Constants.mediumVerticalSpacer,
           AutoSizeText(
             'اندازه نوشته ها مناسب است؟',
-            style: Constants.defaultTextStyle,
+            style: TextStyle(
+              fontFamily: Constants.iranSansFont,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
             textDirection: TextDirection.rtl,
           ),
         ],
