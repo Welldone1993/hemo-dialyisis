@@ -21,21 +21,30 @@ class Constants {
   static const Color filterButtonColor = Color(0xffF0F0EC);
   static const Color filterButtonBorderColor = Color(0xffCECDC1);
 
-  static const String startImage = 'lib/assets/start.png';
+  static const String startImage = 'lib/assets/process/start.png';
+
   static const String avatarImage = 'lib/assets/avatar.png';
+
   static const String deviceImage = 'lib/assets/device.png';
+
   static const String disinfectionSuppliesImage =
-      'lib/assets/disinfection_supplies.png';
-  static const String consumablesImage = 'lib/assets/consumables.png';
-  static const String medicineImage = 'lib/assets/medicines.png';
-  static const String bicarbProduct1Image = 'lib/assets/bicarb_product_1.png';
-  static const String bicarbProduct2Image = 'lib/assets/bicarb_product_2.png';
-  static const String cartridgeRemoveBag1Image = 'lib/assets/cartridge.png';
-  static const String cartridgeRemoveBag2Image = 'lib/assets/cartridge_2.png';
-  static const String cartridgeRemoveBag3Image = 'lib/assets/cartridge_3.png';
-  static const String dialysisFilterImage = 'lib/assets/dialysis_filter.png';
+      'lib/assets/store/disinfection_supplies.png';
+  static const String consumablesImage = 'lib/assets/store/consumables.png';
+  static const String medicineImage = 'lib/assets/store/medicines.png';
+  static const String bicarbProduct1Image =
+      'lib/assets/store/bicarb_product_1.png';
+  static const String bicarbProduct2Image =
+      'lib/assets/store/bicarb_product_2.png';
+  static const String cartridgeRemoveBag1Image =
+      'lib/assets/store/cartridge.png';
+  static const String cartridgeRemoveBag2Image =
+      'lib/assets/store/cartridge_2.png';
+  static const String cartridgeRemoveBag3Image =
+      'lib/assets/store/cartridge_3.png';
+  static const String dialysisFilterImage =
+      'lib/assets/store/dialysis_filter.png';
   static const String storeItemBackgroundImage =
-      'lib/assets/store_item_background.png';
+      'lib/assets/store/store_item_background.png';
 
   static const double tinySpace = 2;
   static const double smallSpace = 4;

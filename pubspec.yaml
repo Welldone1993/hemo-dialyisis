@@ -29,6 +29,8 @@ flutter:
 
   assets:
     - lib/assets/
+    - lib/assets/store/
+    - lib/assets/process/
 
 
   fonts:
