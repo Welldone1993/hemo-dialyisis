@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:get/get.dart';
 
@@ -49,10 +50,64 @@ class StorePageView extends GetView<StorePageController> {
 
   Widget _searchAndFilter() => Row(
         children: [
-          Expanded(child: Placeholder()),
-          Expanded(child: Placeholder()),
+          Expanded(
+            child: _filterAndSortButton(
+              title: 'فیلتر ها',
+              icon: Icons.filter_list,
+            ),
+          ),
+          Expanded(
+            child: _filterAndSortButton(
+              title: 'مرتب سازی',
+              icon: Icons.sort,
+            ),
+          ),
           Expanded(flex: 3, child: _searchField()),
         ],
+      );
+
+  Widget _filterAndSortButton({
+    required final String title,
+    required final IconData icon,
+  }) =>
+      FractionallySizedBox(
+        alignment: AlignmentDirectional.centerEnd,
+        widthFactor: 0.7,
+        heightFactor: 0.7,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: Constants.filterButtonColor,
+            border: Border.all(
+              color: Constants.filterButtonBorderColor,
+              strokeAlign: 4,
+            ),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(12),
+            ),
+          ),
+          child: FractionallySizedBox(
+            widthFactor: 0.8,
+            child: Row(
+              children: [
+                Expanded(
+                  child: AutoSizeText(
+                    title,
+                    style: const TextStyle(
+                      fontFamily: Constants.iranSansFont,
+                      color: Constants.cardBorderColor,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12
+                    ),
+                  ),
+                ),
+                Icon(
+                  icon,
+                  color: Constants.cardBorderColor,
+                ),
+              ],
+            ),
+          ),
+        ),
       );
 
   Widget _searchField() => Padding(

@@ -18,6 +18,8 @@ class Constants {
   static const Color creamyColor = Color(0xffD8D7CD);
   static const Color categoryTitleColor = Color(0xff217868);
   static const Color starColor = Color(0xffFF845E);
+  static const Color filterButtonColor = Color(0xffF0F0EC);
+  static const Color filterButtonBorderColor = Color(0xffCECDC1);
 
   static const String startImage = 'lib/assets/start.png';
   static const String avatarImage = 'lib/assets/avatar.png';
