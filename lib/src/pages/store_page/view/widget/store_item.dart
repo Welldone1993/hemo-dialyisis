@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:hemo_dialysis/src/components/image_provider.dart';
 
+import '../../../../components/image_provider.dart';
 import '../../../../infrastructure/utils/constants.dart';
 import '../../controller/store_page_controller.dart';
 import '../../model/store_item_view_model.dart';

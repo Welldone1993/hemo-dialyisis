@@ -10,4 +10,5 @@ class RoutePaths {
   static const String consumablesPage = '/consumables';
   static const String weighingPage = '/weighing';
   static const String installingPage = '/installing';
+  static const String preparationPage = '/preparation';
 }

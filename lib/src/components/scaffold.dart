@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hemo_dialysis/src/infrastructure/routes/route_names.dart';
 
+import '../infrastructure/routes/route_names.dart';
 import '../infrastructure/utils/constants.dart';
 import 'button_with_icon.dart';
 import 'text_button.dart';

@@ -3,20 +3,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../../../components/button_with_text.dart';
-import '../../../components/checkbox.dart';
 import '../../../components/scaffold.dart';
 import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
-import '../controller/installing_page_controller.dart';
+import '../controller/preparation_page_controller.dart';
 
-class InstallingPageView extends GetView<InstallingPageController> {
-  const InstallingPageView({super.key});
+class PreparationPageView extends GetView<PreparationPageController> {
+  const PreparationPageView({super.key});
 
   @override
   Widget build(BuildContext context) => CustomScaffold(
-        body: _body(),
+        body: Placeholder(),
         action1: const AppBarBackIcon(),
         action2: const AppBarSupportIcon(),
       );
@@ -38,7 +37,6 @@ class InstallingPageView extends GetView<InstallingPageController> {
                   child: Row(
                     children: [
                       Expanded(child: _actionButtons()),
-                      Expanded(flex: 3, child: _checkList()),
                     ],
                   ),
                 ),
@@ -48,25 +46,13 @@ class InstallingPageView extends GetView<InstallingPageController> {
         ),
       );
 
-  Widget _checkList() => Column(
-        children: controller.installingItemList
-            .map(
-              (item) => Expanded(
-                child: CustomCheckbox(
-                  label: item.title,
-                  action: () {},
-                ),
-              ),
-            )
-            .toList(),
-      );
 
   Widget _actionButtons() => Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           CustomButtonWithText(
             label: 'مرحله بعد',
-            action: controller.navigateToPreparationPage,
+            action: () {},
           ),
         ],
       );

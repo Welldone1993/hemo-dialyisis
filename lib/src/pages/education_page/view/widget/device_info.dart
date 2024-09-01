@@ -1,10 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hemo_dialysis/src/pages/education_page/controller/education_page_controller.dart';
 
 import '../../../../components/image_provider.dart';
 import '../../../../infrastructure/utils/constants.dart';
+import '../../controller/education_page_controller.dart';
 
 class DeviceInfo extends GetView<EducationPageController> {
   const DeviceInfo({super.key});

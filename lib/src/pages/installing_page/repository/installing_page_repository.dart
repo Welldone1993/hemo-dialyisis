@@ -1,4 +1,4 @@
-import 'package:hemo_dialysis/src/pages/installing_page/model/installing_item_model.dart';
+import '../model/installing_item_model.dart';
 
 class InstallingPageRepository {
   List<InstallingItemModel> getInstallingItems() => [

@@ -1,10 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hemo_dialysis/src/pages/profile_page/controller/profile_page_controller.dart';
 
 import '../../../../components/image_provider.dart';
 import '../../../../infrastructure/utils/constants.dart';
+import '../../controller/profile_page_controller.dart';
 
 class PersonalInfo extends GetView<ProfilePageController> {
   const PersonalInfo({super.key});
@@ -52,8 +52,8 @@ class PersonalInfo extends GetView<ProfilePageController> {
             child: _dataText('09120924245', hasNumber: true),
           ),
           Expanded(
-            child: _dataText(' تهران، امیرآبادشمالی 18، پلاک 20',
-                hasNumber: true),
+            child:
+                _dataText(' تهران، امیرآبادشمالی 18، پلاک 20', hasNumber: true),
           ),
         ],
       );

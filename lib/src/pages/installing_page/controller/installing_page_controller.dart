@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
-import 'package:hemo_dialysis/src/pages/installing_page/model/installing_item_model.dart';
 
-import '../installing_page_repository.dart';
+import '../../../infrastructure/routes/route_names.dart';
+import '../model/installing_item_model.dart';
+import '../repository/installing_page_repository.dart';
 
 class InstallingPageController extends GetxController {
   final InstallingPageRepository _repository = InstallingPageRepository();
@@ -12,6 +13,10 @@ class InstallingPageController extends GetxController {
     _initPage();
     super.onInit();
   }
+
+  void navigateToPreparationPage() => Get.toNamed(
+        HemoDialysisRouteNames.preparationPage.uri,
+      );
 
   void _initPage() {
     final List<InstallingItemModel> result = _repository.getInstallingItems();
