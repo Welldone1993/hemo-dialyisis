@@ -1,8 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:hemo_dialysis/src/components/image_provider.dart';
 
+import 'package:get/get.dart';
+
+import '../../../components/image_provider.dart';
 import '../../../components/scaffold.dart';
 import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
@@ -33,7 +34,7 @@ class StorePageView extends GetView<StorePageController> {
                 decoration: Decorations.creamyCardDecoration(),
                 child: Column(
                   children: [
-                    const Expanded(child: Placeholder()),
+                    Expanded(child: _searchAndFilter()),
                     Expanded(
                       flex: 7,
                       child: _storeItems(),
@@ -46,10 +47,63 @@ class StorePageView extends GetView<StorePageController> {
         ],
       );
 
+  Widget _searchAndFilter() => Row(
+        children: [
+          Expanded(child: Placeholder()),
+          Expanded(child: Placeholder()),
+          Expanded(flex: 3, child: _searchField()),
+        ],
+      );
+
+  Widget _searchField() => Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: Constants.largeSpace,
+          vertical: Constants.mediumSpace,
+        ),
+        child: DecoratedBox(
+          decoration: const BoxDecoration(
+            color: Constants.whiteColor,
+            borderRadius: BorderRadius.all(
+              Radius.circular(12),
+            ),
+          ),
+          child: TextField(
+            controller: controller.searchTextController,
+            textAlign: TextAlign.end,
+            decoration: const InputDecoration(
+              label: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    'جستجو',
+                    style: TextStyle(
+                      fontFamily: Constants.iranSansFont,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  Constants.smallHorizontalSpacer,
+                  Icon(
+                    Icons.search,
+                    color: Colors.grey,
+                  ),
+                  Constants.mediumHorizontalSpacer,
+                ],
+              ),
+              border: InputBorder.none,
+            ),
+            style: const TextStyle(
+              fontFamily: Constants.iranSansFont,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+      );
+
   Widget _storeItems() => GridView.count(
         crossAxisCount: 3,
         padding: Constants.mediumPadding,
-         childAspectRatio: 0.6,
+        childAspectRatio: 0.6,
         children: controller.storeItems
             .map(
               (item) => StoreItem(
