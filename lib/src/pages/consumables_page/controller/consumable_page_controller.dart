@@ -30,4 +30,6 @@ class ConsumablesPageController extends GetxController {
 
   void navigateToStorePage() =>
       Get.toNamed(HemoDialysisRouteNames.storePage.uri);
+void navigateToWeighingPage() =>
+      Get.toNamed(HemoDialysisRouteNames.weighingPage.uri);
 }

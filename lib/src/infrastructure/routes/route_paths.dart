@@ -8,4 +8,5 @@ class RoutePaths {
   static const String fontPage = '/font';
   static const String vascularAccessPage = '/font';
   static const String consumablesPage = '/consumables';
+  static const String weighingPage = '/weighing';
 }

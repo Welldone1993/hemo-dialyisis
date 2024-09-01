@@ -17,11 +17,10 @@ class CustomScaffold extends StatefulWidget {
     this.action1,
     this.action2,
     this.action3,
-    this.hasFloatingActionButton = false,
   });
 
   final bool? showEndDrawer;
-  final bool? hasFloatingActionButton;
+
   final bool? resizeToAvoidBottomInset;
   final Function()? onBackTap;
   final Widget body;
@@ -41,15 +40,13 @@ class _CustomScaffoldState extends State<CustomScaffold> {
         appBar: showMenu ? _appBarWithBorder(context) : _appBarBody(context),
         body: _body(),
         resizeToAvoidBottomInset: widget.resizeToAvoidBottomInset,
-        floatingActionButton: widget.hasFloatingActionButton!
-            ? CustomButtonWithIcon(
-                icon: CupertinoIcons.speaker_2_fill,
-                action: () {
-                  //   TODO: action in mute button
-                },
-                color: Constants.whiteColor,
-              )
-            : null,
+        floatingActionButton: CustomButtonWithIcon(
+          icon: CupertinoIcons.speaker_2_fill,
+          action: () {
+            //   TODO: action in mute button
+          },
+          color: Constants.whiteColor,
+        ),
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       );
 

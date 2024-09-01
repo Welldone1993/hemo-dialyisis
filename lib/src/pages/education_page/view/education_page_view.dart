@@ -17,7 +17,6 @@ class EducationPageView extends GetView<EducationPageController> {
         body: _body(),
         action1: const AppBarBackIcon(),
         action2: const AppBarSupportIcon(),
-        hasFloatingActionButton: true,
       );
 
   Widget _body() => Obx(

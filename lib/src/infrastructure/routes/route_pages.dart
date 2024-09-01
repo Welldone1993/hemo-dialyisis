@@ -17,6 +17,8 @@ import '../../pages/home/view/home_page_view.dart';
 import '../../pages/store_page/common/store_page_binding.dart';
 import '../../pages/volume_page/common/volume_page_binding.dart';
 import '../../pages/volume_page/view/volume_page_view.dart';
+import '../../pages/weighing_page/common/weighing_page_binding.dart';
+import '../../pages/weighing_page/view/weighing_page_view.dart';
 import 'route_names.dart';
 
 class HemoDialysisModulePages {
@@ -80,9 +82,15 @@ class HemoDialysisModulePages {
       );
 
   static GetPage<dynamic> _consumablesPage() => GetPage(
-        name: HemoDialysisRouteNames.consumablesPage.path,
-        page: ConsumablesPageView.new,
-        binding: ConsumablesPageBinding(),
+      name: HemoDialysisRouteNames.consumablesPage.path,
+      page: ConsumablesPageView.new,
+      binding: ConsumablesPageBinding(),
+      children: [_weighingPage()]);
+
+  static GetPage<dynamic> _weighingPage() => GetPage(
+        name: HemoDialysisRouteNames.weighingPage.path,
+        page: WeighingPageView.new,
+        binding: WeighingPageBinding(),
       );
 }
 

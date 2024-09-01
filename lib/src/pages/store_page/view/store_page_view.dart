@@ -1,7 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import 'package:get/get.dart';
 
 import '../../../components/image_provider.dart';
@@ -93,11 +91,10 @@ class StorePageView extends GetView<StorePageController> {
                   child: AutoSizeText(
                     title,
                     style: const TextStyle(
-                      fontFamily: Constants.iranSansFont,
-                      color: Constants.cardBorderColor,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12
-                    ),
+                        fontFamily: Constants.iranSansFont,
+                        color: Constants.cardBorderColor,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 12),
                   ),
                 ),
                 Icon(

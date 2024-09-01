@@ -20,7 +20,6 @@ class HomePageView extends GetView<HomePageController> {
   Widget build(BuildContext context) => CustomScaffold(
         body: _body(context),
         showEndDrawer: true,
-        hasFloatingActionButton: true,
         action1: _appBarAvatar(),
         action2: _appBarWelcomeText(),
         action3: const AppBarSupportIcon(),

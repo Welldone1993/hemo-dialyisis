@@ -153,7 +153,7 @@ class ConsumablesPageView extends GetView<ConsumablesPageController> {
           Expanded(
             child: CustomButtonWithText(
               label: 'مرحله بعد',
-              action: () {},
+              action: controller.navigateToWeighingPage,
             ),
           ),
           const Spacer(),
