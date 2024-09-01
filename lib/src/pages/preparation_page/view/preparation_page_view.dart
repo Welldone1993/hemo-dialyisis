@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../components/button_with_text.dart';
@@ -71,7 +72,7 @@ class PreparationPageView extends GetView<PreparationPageController> {
       );
 
   Widget _hintText() => FractionallySizedBox(
-        heightFactor: 0.6,
+        heightFactor: 0.8,
         widthFactor: 1,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -91,12 +92,15 @@ class PreparationPageView extends GetView<PreparationPageController> {
 
   Widget _checkProcessHint() => Row(
         mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisSize: MainAxisSize.min,
         children: [
           if (controller.isReady.value)
-            const Icon(
-              CupertinoIcons.checkmark_alt_circle,
-              color: Constants.successColor,
-              size: 50,
+            const FittedBox(
+              child: Icon(
+                CupertinoIcons.checkmark_alt_circle,
+                color: Constants.successColor,
+                size: 50,
+              ),
             ),
           AutoSizeText(
             _getHint(),
@@ -107,6 +111,7 @@ class PreparationPageView extends GetView<PreparationPageController> {
             ),
             textDirection: TextDirection.rtl,
           ),
+
         ],
       );
 
