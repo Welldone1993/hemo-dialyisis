@@ -20,8 +20,10 @@ class Constants {
   static const Color starColor = Color(0xffFF845E);
   static const Color filterButtonColor = Color(0xffF0F0EC);
   static const Color filterButtonBorderColor = Color(0xffCECDC1);
+  static const Color successColor = Color(0xff09B26F);
 
   static const String startImage = 'lib/assets/process/start.png';
+  static const String primeImage = 'lib/assets/process/prime.png';
 
   static const String avatarImage = 'lib/assets/avatar.png';
 

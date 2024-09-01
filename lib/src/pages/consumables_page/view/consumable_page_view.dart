@@ -122,9 +122,9 @@ class ConsumablesPageView extends GetView<ConsumablesPageController> {
         ),
       );
 
-  Widget _consumableHintText() => FractionallySizedBox(
+  Widget _consumableHintText() => const FractionallySizedBox(
         heightFactor: 0.8,
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Expanded(

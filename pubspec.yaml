@@ -16,6 +16,7 @@ dependencies:
   auto_size_text: ^3.0.0
   font_awesome_flutter: ^10.7.0
   cupertino_icons: ^1.0.8
+  timer_count_down: ^2.2.2
 
 dev_dependencies:
   flutter_test:
