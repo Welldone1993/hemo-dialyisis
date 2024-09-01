@@ -65,28 +65,36 @@ class FontPageView extends GetView<FontPageController> {
         ],
       );
 
-  Widget _fontHintText() => const Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          AutoSizeText(
-            'تنظیم نوشته ها',
-            style: TextStyle(
-              fontFamily: Constants.iranSansFont,
-              color: Constants.disableColor,
-              fontWeight: FontWeight.w500,
+  Widget _fontHintText() => const FractionallySizedBox(
+        heightFactor: 0.8,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Expanded(
+              child: AutoSizeText(
+                'تنظیم نوشته ها',
+                style: TextStyle(
+                  fontFamily: Constants.iranSansFont,
+                  color: Constants.disableColor,
+                  fontWeight: FontWeight.w500,
+                ),
+                textDirection: TextDirection.rtl,
+              ),
             ),
-            textDirection: TextDirection.rtl,
-          ),
-          Constants.mediumVerticalSpacer,
-          AutoSizeText(
-            'اندازه نوشته ها مناسب است؟',
-            style: TextStyle(
-              fontFamily: Constants.iranSansFont,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+            Expanded(
+              child: AutoSizeText(
+                'اندازه نوشته ها مناسب است؟',
+                style: TextStyle(
+                  fontFamily: Constants.iranSansFont,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                textDirection: TextDirection.rtl,
+              ),
             ),
-            textDirection: TextDirection.rtl,
-          ),
-        ],
+            Spacer(),
+            Spacer(),
+          ],
+        ),
       );
 }

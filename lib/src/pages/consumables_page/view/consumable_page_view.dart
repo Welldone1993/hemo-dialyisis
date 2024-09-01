@@ -41,7 +41,7 @@ class ConsumablesPageView extends GetView<ConsumablesPageController> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            _consumableHintText(),
+                            Expanded(child: _consumableHintText()),
                             ..._consumablesPart(),
                           ],
                         ),
@@ -122,29 +122,35 @@ class ConsumablesPageView extends GetView<ConsumablesPageController> {
         ),
       );
 
-  Widget _consumableHintText() => const Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          AutoSizeText(
-            'لیست مواد مصرفی',
-            style: TextStyle(
-              fontFamily: Constants.iranSansFont,
-              color: Constants.disableColor,
-              fontWeight: FontWeight.w500,
+  Widget _consumableHintText() => FractionallySizedBox(
+        heightFactor: 0.8,
+        child: const Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Expanded(
+              child: AutoSizeText(
+                'لیست مواد مصرفی',
+                style: TextStyle(
+                  fontFamily: Constants.iranSansFont,
+                  color: Constants.disableColor,
+                  fontWeight: FontWeight.w500,
+                ),
+                textDirection: TextDirection.rtl,
+              ),
             ),
-            textDirection: TextDirection.rtl,
-          ),
-          Constants.mediumVerticalSpacer,
-          AutoSizeText(
-            'مواردی که در خانه موجود دارید را از لیست زیر انتخاب کنید.',
-            style: TextStyle(
-              fontFamily: Constants.iranSansFont,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+            Expanded(
+              child: AutoSizeText(
+                'مواردی که در خانه موجود دارید را از لیست زیر انتخاب کنید.',
+                style: TextStyle(
+                  fontFamily: Constants.iranSansFont,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                textDirection: TextDirection.rtl,
+              ),
             ),
-            textDirection: TextDirection.rtl,
-          ),
-        ],
+          ],
+        ),
       );
 
   Widget _actionButtons() => Row(

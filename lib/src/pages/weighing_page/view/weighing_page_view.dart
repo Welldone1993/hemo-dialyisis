@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../components/button_with_text.dart';
@@ -85,7 +86,7 @@ class WeighingPageView extends GetView<WeighingPageController> {
           Expanded(
             child: CustomButtonWithText(
               label: 'مرحله بعد',
-              action: () {},
+              action: controller.navigateToInstallingPage,
             ),
           ),
           const Spacer(),
@@ -100,29 +101,36 @@ class WeighingPageView extends GetView<WeighingPageController> {
         ],
       );
 
-  Widget _hintText() => const Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          AutoSizeText(
-            'وزن کشی',
-            style: TextStyle(
-              fontFamily: Constants.iranSansFont,
-              color: Constants.disableColor,
-              fontWeight: FontWeight.w500,
+  Widget _hintText() => const FractionallySizedBox(
+        heightFactor: 0.6,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Expanded(
+              child: AutoSizeText(
+                'وزن کشی',
+                style: TextStyle(
+                  fontFamily: Constants.iranSansFont,
+                  color: Constants.disableColor,
+                  fontWeight: FontWeight.w500,
+                ),
+                textDirection: TextDirection.rtl,
+              ),
             ),
-            textDirection: TextDirection.rtl,
-          ),
-          Constants.mediumVerticalSpacer,
-          AutoSizeText(
-            'لطفا روی ترازوی دستگاه بایستید.',
-            style: TextStyle(
-              fontFamily: Constants.iranSansFont,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+            Expanded(
+              child: AutoSizeText(
+                'لطفا روی ترازوی دستگاه بایستید.',
+                style: TextStyle(
+                  fontFamily: Constants.iranSansFont,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                textDirection: TextDirection.rtl,
+              ),
             ),
-            textDirection: TextDirection.rtl,
-          ),
-        ],
+            Spacer(),
+          ],
+        ),
       );
 }

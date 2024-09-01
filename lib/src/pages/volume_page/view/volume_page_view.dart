@@ -85,29 +85,38 @@ class VolumePageView extends GetView<VolumePageController> {
         iconColor: Constants.buttonSecondaryColor,
       );
 
-  Widget _hintText() => const Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          AutoSizeText(
-            'تنظیم صدا: علامت صدا رو لمس کن.',
-            style: TextStyle(
-              fontFamily: Constants.iranSansFont,
-              color: Constants.disableColor,
-              fontWeight: FontWeight.w500,
+  Widget _hintText() => const FractionallySizedBox(
+        heightFactor: 0.8,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: AutoSizeText(
+                'تنظیم صدا: علامت صدا رو لمس کن.',
+                style: TextStyle(
+                  fontFamily: Constants.iranSansFont,
+                  color: Constants.disableColor,
+                  fontWeight: FontWeight.w500,
+                ),
+                textDirection: TextDirection.rtl,
+              ),
             ),
-            textDirection: TextDirection.rtl,
-          ),
-          Constants.mediumVerticalSpacer,
-          AutoSizeText(
-            'صدای زنگ رو میشنوی؟',
-            style: TextStyle(
-              fontFamily: Constants.iranSansFont,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+            Constants.mediumVerticalSpacer,
+            Expanded(
+              child: AutoSizeText(
+                'صدای زنگ رو میشنوی؟',
+                style: TextStyle(
+                  fontFamily: Constants.iranSansFont,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                textDirection: TextDirection.rtl,
+              ),
             ),
-            textDirection: TextDirection.rtl,
-          ),
-        ],
+            Spacer(),
+            Spacer(),
+          ],
+        ),
       );
 }

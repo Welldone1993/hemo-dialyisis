@@ -23,10 +23,10 @@ class CustomButtonWithIcon extends StatefulWidget {
   final double? width;
 
   @override
-  State<CustomButtonWithIcon> createState() => _CustomTextButtonState();
+  State<CustomButtonWithIcon> createState() => _CustomButtonWithIconState();
 }
 
-class _CustomTextButtonState extends State<CustomButtonWithIcon> {
+class _CustomButtonWithIconState extends State<CustomButtonWithIcon> {
   double _padding = 6;
   double _margin = 0;
 

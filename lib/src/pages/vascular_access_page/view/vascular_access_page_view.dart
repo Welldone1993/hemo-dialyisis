@@ -60,28 +60,36 @@ class VascularAccessPageView extends GetView<VascularAccessController> {
         ],
       );
 
-  Widget _hintText() => const Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          AutoSizeText(
-            'دسترسی عروقی',
-            style: TextStyle(
-              fontFamily: Constants.iranSansFont,
-              color: Constants.disableColor,
-              fontWeight: FontWeight.w500,
+  Widget _hintText() => const FractionallySizedBox(
+        heightFactor: 0.8,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Expanded(
+              child: AutoSizeText(
+                'دسترسی عروقی',
+                style: TextStyle(
+                  fontFamily: Constants.iranSansFont,
+                  color: Constants.disableColor,
+                  fontWeight: FontWeight.w500,
+                ),
+                textDirection: TextDirection.rtl,
+              ),
             ),
-            textDirection: TextDirection.rtl,
-          ),
-          Constants.mediumVerticalSpacer,
-          AutoSizeText(
-            'نوع دسترسی خود را انتخاب کنید.',
-            style: TextStyle(
-              fontFamily: Constants.iranSansFont,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+            Expanded(
+              child: AutoSizeText(
+                'نوع دسترسی خود را انتخاب کنید.',
+                style: TextStyle(
+                  fontFamily: Constants.iranSansFont,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                textDirection: TextDirection.rtl,
+              ),
             ),
-            textDirection: TextDirection.rtl,
-          ),
-        ],
+            Spacer(),
+            Spacer(),
+          ],
+        ),
       );
 }
