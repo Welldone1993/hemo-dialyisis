@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
-import 'package:hemo_dialysis/src/infrastructure/routes/route_names.dart';
+
+import '../../../infrastructure/routes/route_names.dart';
 
 class TreatmentPageController extends GetxController {
   Timer? timer;

@@ -1,9 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:hemo_dialysis/src/components/checkbox.dart';
 
 import '../../../components/button_with_text.dart';
+import '../../../components/checkbox.dart';
 import '../../../components/image_provider.dart';
 import '../../../components/scaffold.dart';
 import '../../../infrastructure/utils/constants.dart';

@@ -1,10 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hemo_dialysis/src/pages/treatment_page/controller/treatment_controller.dart';
 
 import '../../../../infrastructure/utils/constants.dart';
 import '../../../../infrastructure/utils/decorations.dart';
+import '../../controller/treatment_controller.dart';
 
 class TreatmentTimer extends GetView<TreatmentPageController> {
   const TreatmentTimer({super.key});
