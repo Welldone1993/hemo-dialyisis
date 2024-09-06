@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../../../infrastructure/routes/route_names.dart';
 import '../model/physical_preparation_item_model.dart';
 import '../repository/physical_preparation_page_repository.dart';
 
@@ -14,8 +15,8 @@ class PhysicalPreparationPageController extends GetxController {
     super.onInit();
   }
 
-  void navigateToPreparationPage() => Get.toNamed(
-        'HemoDialysisRouteNames.preparationPage.uri',
+  void navigateToStartProcessPage() => Get.toNamed(
+        HemoDialysisRouteNames.startProcessPage.uri,
       );
 
   void _initPage() {

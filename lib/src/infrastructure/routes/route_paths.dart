@@ -12,4 +12,5 @@ class RoutePaths {
   static const String installingPage = '/installing';
   static const String preparationPage = '/preparation';
   static const String physicalPreparationPage = '/physical-preparation';
+  static const String startProcessPage = '/start-process';
 }

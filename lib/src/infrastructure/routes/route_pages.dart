@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../pages/consumables_page/common/consumables_page_binding.dart';
 import '../../pages/consumables_page/view/consumable_page_view.dart';
 import '../../pages/education_page/common/education_page_binding.dart';
@@ -16,6 +17,8 @@ import '../../pages/preparation_page/common/preparation_page_binding.dart';
 import '../../pages/preparation_page/view/preparation_page_view.dart';
 import '../../pages/profile_page/common/profile_page_binding.dart';
 import '../../pages/profile_page/view/profile_page_view.dart';
+import '../../pages/start_process/common/start_process_page_binding.dart';
+import '../../pages/start_process/view/start_process_page_view.dart';
 import '../../pages/store_page/common/store_page_binding.dart';
 import '../../pages/store_page/view/store_page_view.dart';
 import '../../pages/vascular_access_page/common/vascular_access_page_binding.dart';
@@ -113,9 +116,15 @@ class HemoDialysisModulePages {
           ]);
 
   static GetPage<dynamic> _physicalPreparationPage() => GetPage(
-        name: HemoDialysisRouteNames.physicalPreparationPage.path,
-        page: PhysicalPreparationPageView.new,
-        binding: PhysicalPreparationPageBinding(),
+      name: HemoDialysisRouteNames.physicalPreparationPage.path,
+      page: PhysicalPreparationPageView.new,
+      binding: PhysicalPreparationPageBinding(),
+      children: [_startProcessPage()]);
+
+  static GetPage<dynamic> _startProcessPage() => GetPage(
+        name: HemoDialysisRouteNames.startProcessPage.path,
+        page: StartProcessPageView.new,
+        binding: StartProcessPageBinding(),
       );
 }
 

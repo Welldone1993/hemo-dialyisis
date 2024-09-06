@@ -83,7 +83,8 @@ class HemoDialysisRouteNames extends Routes {
         RoutePaths.installingPage +
         RoutePaths.preparationPage,
     RoutePaths.preparationPage,
-  );static const Routes physicalPreparationPage = Routes(
+  );
+  static const Routes physicalPreparationPage = Routes(
     RoutePaths.homePage +
         RoutePaths.volumePage +
         RoutePaths.fontPage +
@@ -91,8 +92,22 @@ class HemoDialysisRouteNames extends Routes {
         RoutePaths.consumablesPage +
         RoutePaths.weighingPage +
         RoutePaths.installingPage +
-        RoutePaths.preparationPage+
+        RoutePaths.preparationPage +
         RoutePaths.physicalPreparationPage,
     RoutePaths.physicalPreparationPage,
+  );
+
+  static const Routes startProcessPage = Routes(
+    RoutePaths.homePage +
+        RoutePaths.volumePage +
+        RoutePaths.fontPage +
+        RoutePaths.vascularAccessPage +
+        RoutePaths.consumablesPage +
+        RoutePaths.weighingPage +
+        RoutePaths.installingPage +
+        RoutePaths.preparationPage +
+        RoutePaths.physicalPreparationPage +
+        RoutePaths.startProcessPage,
+    RoutePaths.startProcessPage,
   );
 }
