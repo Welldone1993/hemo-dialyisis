@@ -12,12 +12,14 @@ class TreatmentPageController extends GetxController {
       remainingMinute = '30'.obs,
       remainingHour = '04'.obs;
 
-  final RxInt secondsLeft = (11).obs;
+  final RxInt secondsLeft = 3.obs, initialSeconds = 0.obs;
+  final RxDouble remainingTime = 1.0.obs;
 
   // final RxInt secondsLeft = (16200).obs;
 
   @override
   void onInit() {
+    initialSeconds.value = secondsLeft.value;
     _timer();
     super.onInit();
   }
@@ -28,6 +30,7 @@ class TreatmentPageController extends GetxController {
       (timer) {
         if (secondsLeft.value > 0) {
           secondsLeft.value -= 1;
+          remainingTime.value = secondsLeft.value / initialSeconds.value;
           _formatTime(secondsLeft.value);
         } else {
           timer.cancel();
