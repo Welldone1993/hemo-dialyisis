@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../pages/blood_return_page/common/blood_return_binding.dart';
+import '../../pages/blood_return_page/view/blood_return_page_view.dart';
 import '../../pages/consumables_page/common/consumables_page_binding.dart';
 import '../../pages/consumables_page/view/consumable_page_view.dart';
 import '../../pages/education_page/common/education_page_binding.dart';
@@ -21,6 +23,8 @@ import '../../pages/start_process/common/start_process_page_binding.dart';
 import '../../pages/start_process/view/start_process_page_view.dart';
 import '../../pages/store_page/common/store_page_binding.dart';
 import '../../pages/store_page/view/store_page_view.dart';
+import '../../pages/treatment_page/common/treatment_page_binding.dart';
+import '../../pages/treatment_page/view/treatment_page_view.dart';
 import '../../pages/vascular_access_page/common/vascular_access_page_binding.dart';
 import '../../pages/vascular_access_page/view/vascular_access_page_view.dart';
 import '../../pages/volume_page/common/volume_page_binding.dart';
@@ -108,12 +112,10 @@ class HemoDialysisModulePages {
       children: [_preparationPage()]);
 
   static GetPage<dynamic> _preparationPage() => GetPage(
-          name: HemoDialysisRouteNames.preparationPage.path,
-          page: PreparationPageView.new,
-          binding: PreparationPageBinding(),
-          children: [
-            _physicalPreparationPage(),
-          ]);
+      name: HemoDialysisRouteNames.preparationPage.path,
+      page: PreparationPageView.new,
+      binding: PreparationPageBinding(),
+      children: [_physicalPreparationPage()]);
 
   static GetPage<dynamic> _physicalPreparationPage() => GetPage(
       name: HemoDialysisRouteNames.physicalPreparationPage.path,
@@ -122,9 +124,21 @@ class HemoDialysisModulePages {
       children: [_startProcessPage()]);
 
   static GetPage<dynamic> _startProcessPage() => GetPage(
-        name: HemoDialysisRouteNames.startProcessPage.path,
-        page: StartProcessPageView.new,
-        binding: StartProcessPageBinding(),
+      name: HemoDialysisRouteNames.startProcessPage.path,
+      page: StartProcessPageView.new,
+      binding: StartProcessPageBinding(),
+      children: [_treatmentPage()]);
+
+  static GetPage<dynamic> _treatmentPage() => GetPage(
+      name: HemoDialysisRouteNames.treatmentPage.path,
+      page: TreatmentPageView.new,
+      binding: TreatmentPageBinding(),
+      children: [_bloodReturnPage()]);
+
+  static GetPage<dynamic> _bloodReturnPage() => GetPage(
+        name: HemoDialysisRouteNames.bloodReturnPage.path,
+        page: BloodReturnPageView.new,
+        binding: BloodReturnPageBinding(),
       );
 }
 

@@ -6,10 +6,10 @@ import '../../../components/scaffold.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
-import '../controller/start_process_controller.dart';
+import '../controller/blood_return_controller.dart';
 
-class StartProcessPageView extends GetView<StartProcessPageController> {
-  const StartProcessPageView({super.key});
+class BloodReturnPageView extends GetView<BloodReturnController> {
+  const BloodReturnPageView({super.key});
 
   @override
   Widget build(BuildContext context) => CustomScaffold(
@@ -29,10 +29,6 @@ class StartProcessPageView extends GetView<StartProcessPageController> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  flex: 3,
-                  child: Placeholder(),
-                ),
                 Expanded(child: _actionButtons()),
               ],
             ),
@@ -43,8 +39,8 @@ class StartProcessPageView extends GetView<StartProcessPageController> {
   Widget _actionButtons() => Row(
         children: [
           CustomButtonWithText(
-            label: 'شروع درمان',
-            action: controller.navigateToTreatmentPage,
+            label: 'بازگشت خون',
+            action: () {},
           ),
         ],
       );

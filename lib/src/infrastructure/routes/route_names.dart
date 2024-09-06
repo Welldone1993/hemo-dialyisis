@@ -110,4 +110,34 @@ class HemoDialysisRouteNames extends Routes {
         RoutePaths.startProcessPage,
     RoutePaths.startProcessPage,
   );
+
+  static const Routes treatmentPage = Routes(
+    RoutePaths.homePage +
+        RoutePaths.volumePage +
+        RoutePaths.fontPage +
+        RoutePaths.vascularAccessPage +
+        RoutePaths.consumablesPage +
+        RoutePaths.weighingPage +
+        RoutePaths.installingPage +
+        RoutePaths.preparationPage +
+        RoutePaths.physicalPreparationPage +
+        RoutePaths.startProcessPage +
+        RoutePaths.treatmentPage,
+    RoutePaths.treatmentPage,
+  );
+  static const Routes bloodReturnPage = Routes(
+    RoutePaths.homePage +
+        RoutePaths.volumePage +
+        RoutePaths.fontPage +
+        RoutePaths.vascularAccessPage +
+        RoutePaths.consumablesPage +
+        RoutePaths.weighingPage +
+        RoutePaths.installingPage +
+        RoutePaths.preparationPage +
+        RoutePaths.physicalPreparationPage +
+        RoutePaths.startProcessPage +
+        RoutePaths.treatmentPage+
+        RoutePaths.bloodReturnPage,
+    RoutePaths.bloodReturnPage,
+  );
 }
