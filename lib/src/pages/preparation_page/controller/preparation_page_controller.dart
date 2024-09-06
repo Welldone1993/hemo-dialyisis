@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
+import 'package:hemo_dialysis/src/infrastructure/routes/route_names.dart';
 
 class PreparationPageController extends GetxController {
   Timer? timer;
@@ -12,9 +13,12 @@ class PreparationPageController extends GetxController {
     if (!isPreparationMode.value && !isReady.value) {
       _timer();
     } else if (isReady.value) {
-      print('READY!!!!!!!!');
+      _navigateToPhysicalPreparationPage();
     }
   }
+
+  void _navigateToPhysicalPreparationPage() =>
+      Get.toNamed(HemoDialysisRouteNames.physicalPreparationPage.uri);
 
   void _timer() {
     remainingTime.value = _formatTime(secondsLeft.value);

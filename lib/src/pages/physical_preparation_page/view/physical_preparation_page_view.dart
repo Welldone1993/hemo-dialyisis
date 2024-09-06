@@ -11,8 +11,8 @@ import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
 
-class InstallingPageView extends GetView<PhysicalPreparationPageController> {
-  const InstallingPageView({super.key});
+class PhysicalPreparationPageView extends GetView<PhysicalPreparationPageController> {
+  const PhysicalPreparationPageView({super.key});
 
   @override
   Widget build(BuildContext context) => CustomScaffold(

@@ -10,6 +10,8 @@ import '../../pages/home/common/home_page_binding.dart';
 import '../../pages/home/view/home_page_view.dart';
 import '../../pages/installing_page/common/installing_page_binding.dart';
 import '../../pages/installing_page/view/installing_page_view.dart';
+import '../../pages/physical_preparation_page/common/physical_preparation_page_binding.dart';
+import '../../pages/physical_preparation_page/view/physical_preparation_page_view.dart';
 import '../../pages/preparation_page/common/preparation_page_binding.dart';
 import '../../pages/preparation_page/view/preparation_page_view.dart';
 import '../../pages/profile_page/common/profile_page_binding.dart';
@@ -103,9 +105,17 @@ class HemoDialysisModulePages {
       children: [_preparationPage()]);
 
   static GetPage<dynamic> _preparationPage() => GetPage(
-        name: HemoDialysisRouteNames.preparationPage.path,
-        page: PreparationPageView.new,
-        binding: PreparationPageBinding(),
+          name: HemoDialysisRouteNames.preparationPage.path,
+          page: PreparationPageView.new,
+          binding: PreparationPageBinding(),
+          children: [
+            _physicalPreparationPage(),
+          ]);
+
+  static GetPage<dynamic> _physicalPreparationPage() => GetPage(
+        name: HemoDialysisRouteNames.physicalPreparationPage.path,
+        page: PhysicalPreparationPageView.new,
+        binding: PhysicalPreparationPageBinding(),
       );
 }
 
