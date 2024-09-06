@@ -11,7 +11,8 @@ import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
 
-class PhysicalPreparationPageView extends GetView<PhysicalPreparationPageController> {
+class PhysicalPreparationPageView
+    extends GetView<PhysicalPreparationPageController> {
   const PhysicalPreparationPageView({super.key});
 
   @override
@@ -23,28 +24,48 @@ class PhysicalPreparationPageView extends GetView<PhysicalPreparationPageControl
 
   Widget _body() => FractionallySizedBox(
         heightFactor: 0.85,
-        widthFactor: 0.85,
-        child: DecoratedBox(
-          decoration: Decorations.cardDecoration(),
-          child: FractionallySizedBox(
-            heightFactor: 0.85,
-            widthFactor: 0.85,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Expanded(child: _hintText()),
-                Expanded(
-                  flex: 5,
-                  child: Row(
-                    children: [
-                      Expanded(child: _actionButtons()),
-                      Expanded(flex: 3, child: _checkList()),
-                    ],
+        child: Row(
+          children: [
+            const Expanded(
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: Constants.creamyColor,
+                ),
+                child: FractionallySizedBox(
+                  heightFactor: 1,
+                  widthFactor: 1,
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 2,
+              child: DecoratedBox(
+                decoration: Decorations.cardDecoration(),
+                child: FractionallySizedBox(
+                  heightFactor: 0.85,
+                  widthFactor: 0.85,
+                  child: Padding(
+                    padding: const EdgeInsets.all(Constants.giantSpace),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Expanded(child: _hintText()),
+                        Expanded(
+                          flex: 5,
+                          child: Row(
+                            children: [
+                              Expanded(child: _actionButtons()),
+                              Expanded(flex: 3, child: _checkList()),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ],
+              ),
             ),
-          ),
+          ],
         ),
       );
 
