@@ -1,8 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:hemo_dialysis/src/components/checkbox.dart';
+import 'package:hemo_dialysis/src/components/image_provider.dart';
 
 import '../../../components/button_with_text.dart';
 import '../../../components/scaffold.dart';
+import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
@@ -29,6 +33,18 @@ class BloodReturnPageView extends GetView<BloodReturnController> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Expanded(
+                  child: Row(
+                    children: [
+                      const Expanded(
+                        child: CustomImageProvider(
+                          imageAddress: Constants.disconnectImage,
+                        ),
+                      ),
+                      Expanded(flex: 2, child: _hintAndCheckBox()),
+                    ],
+                  ),
+                ),
                 Expanded(child: _actionButtons()),
               ],
             ),
@@ -41,6 +57,96 @@ class BloodReturnPageView extends GetView<BloodReturnController> {
           CustomButtonWithText(
             label: 'بازگشت خون',
             action: () {},
+          ),
+        ],
+      );
+
+  Widget _hintAndCheckBox() => Column(
+        children: [
+          Expanded(
+            flex: 3,
+            child: FractionallySizedBox(
+              heightFactor: 0.8,
+              widthFactor: 1,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Expanded(
+                    child: AutoSizeText(
+                      'بازگشت خون',
+                      style: TextStyle(
+                        fontFamily: Constants.iranSansFont,
+                        color: Constants.disableColor,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      textDirection: TextDirection.rtl,
+                    ),
+                  ),
+                  const Expanded(
+                    child: AutoSizeText(
+                      'پس از بازگشت خون، درمان شما به اتمام میرسد.',
+                      style: TextStyle(
+                        fontFamily: Constants.iranSansFont,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textDirection: TextDirection.rtl,
+                    ),
+                  ),
+                  Expanded(child: _bloodReturnHint()),
+                  const Spacer(),
+                  const Spacer(),
+                ],
+              ),
+            ),
+          ),
+          Expanded(
+              flex: 2,
+              child: FractionallySizedBox(
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: CustomCheckbox(
+                        label:
+                            'ورودی خون به دستگاه را بسته و از محل دسترسی جدا کنید.',
+                        action: () {},
+                      ),
+                    ),
+                    Expanded(
+                      child: CustomCheckbox(
+                        label:
+                            'دسترسی جدا شده را به محلول نرمال سالین متصل کنید.',
+                        action: () {},
+                      ),
+                    ),
+                  ],
+                ),
+              )),
+        ],
+      );
+
+  Widget _bloodReturnHint() => const Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Spacer(),
+          Expanded(
+            flex: 2,
+            child: AutoSizeText(
+              'پس از چک کردن موارد زیر دکمه بازگشت خون را لمس کنید.',
+              style: TextStyle(
+                fontFamily: Constants.iranSansFont,
+                color: Constants.disableColor,
+              ),
+              textDirection: TextDirection.rtl,
+            ),
+          ),
+          Constants.mediumHorizontalSpacer,
+          Icon(
+            CupertinoIcons.info,
+            color: Constants.disableColor,
           ),
         ],
       );

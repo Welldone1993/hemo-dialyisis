@@ -25,6 +25,7 @@ class Constants {
   static const String startImage = 'lib/assets/process/start.png';
   static const String primeImage = 'lib/assets/process/prime.png';
   static const String treatmentImage = 'lib/assets/process/treatment.png';
+  static const String disconnectImage = 'lib/assets/process/disconnect.png';
 
   static const String avatarImage = 'lib/assets/avatar.png';
 

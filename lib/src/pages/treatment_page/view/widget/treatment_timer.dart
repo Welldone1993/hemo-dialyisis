@@ -108,13 +108,11 @@ class TreatmentTimer extends GetView<TreatmentPageController> {
             ),
             const Spacer(),
             SizedBox(
-              child: Expanded(
-                child: AutoSizeText(
-                  title,
-                  style: const TextStyle(
-                    fontFamily: Constants.iranSansFaNumFont,
-                    fontWeight: FontWeight.w500,
-                  ),
+              child: AutoSizeText(
+                title,
+                style: const TextStyle(
+                  fontFamily: Constants.iranSansFaNumFont,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),
