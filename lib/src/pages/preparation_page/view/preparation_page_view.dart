@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../components/button_with_text.dart';
@@ -111,7 +110,6 @@ class PreparationPageView extends GetView<PreparationPageController> {
             ),
             textDirection: TextDirection.rtl,
           ),
-
         ],
       );
 
@@ -190,9 +188,10 @@ class PreparationPageView extends GetView<PreparationPageController> {
                     () => AutoSizeText(
                       controller.remainingTime.value,
                       style: const TextStyle(
-                          fontFamily: Constants.iranSansFaNumFont,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 35),
+                        fontFamily: Constants.iranSansFaNumFont,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 35,
+                        ),
                     ),
                   ),
                 ),
