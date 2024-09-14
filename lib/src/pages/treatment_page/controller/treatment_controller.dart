@@ -35,7 +35,7 @@ class TreatmentPageController extends GetxController {
           _formatTime(secondsLeft.value);
         } else {
           timer.cancel();
-          isTreatmentDone.value = true;
+          // isTreatmentDone.value = true;
         }
       },
     );

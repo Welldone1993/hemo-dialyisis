@@ -50,7 +50,6 @@ class _CustomButtonWithTextState extends State<CustomButtonWithText> {
           setState(() {
             _padding = 0.0;
             _margin = 6.0;
-
           });
         },
         onTapUp: (details) {
@@ -58,7 +57,7 @@ class _CustomButtonWithTextState extends State<CustomButtonWithText> {
             _padding = 6;
             _margin = 0;
           });
-            widget.action();
+          widget.action();
         },
         child: AnimatedContainer(
           margin: EdgeInsets.only(top: _margin),

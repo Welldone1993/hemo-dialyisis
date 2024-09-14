@@ -6,9 +6,7 @@ class AppBarSupportIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => IconButton(
-        onPressed: () {
-          print('support');
-        },
+        onPressed: () {},
         icon: const Icon(FontAwesomeIcons.headset),
       );
 }

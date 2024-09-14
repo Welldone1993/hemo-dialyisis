@@ -104,7 +104,7 @@ class ConsumablesPageView extends GetView<ConsumablesPageController> {
                           horizontal: Constants.smallSpace),
                       child: CustomChip(
                         label: e.name,
-                        action: () => print(e.name),
+                        action: () {},
                       ),
                     ),
                   ),

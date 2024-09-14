@@ -5,16 +5,18 @@ import '../infrastructure/utils/constants.dart';
 class CustomButtonWithIcon extends StatefulWidget {
   const CustomButtonWithIcon({
     super.key,
-    required this.icon,
+    this.icon,
+    this.child,
     required this.action,
     this.color,
     this.iconColor,
     this.height,
     this.width,
     this.isDisable = false,
-  });
+  }) : assert(icon != null || child != null, 'Set Child Widget or Icon');
 
-  final IconData icon;
+  final IconData? icon;
+  final Widget? child;
   final void Function() action;
   final bool? isDisable;
   final Color? color;
@@ -69,11 +71,12 @@ class _CustomButtonWithIconState extends State<CustomButtonWithIcon> {
                   Border.all(color: Constants.buttonShadowColor, width: 1.5),
             ),
             child: Center(
-              child: Icon(
-                widget.icon,
-                size: widget.height != null ? (widget.height! / 2) : null,
-                color: widget.iconColor,
-              ),
+              child: widget.child ??
+                  Icon(
+                    widget.icon,
+                    size: widget.height != null ? (widget.height! / 2) : null,
+                    color: widget.iconColor,
+                  ),
             ),
           ),
         ),
