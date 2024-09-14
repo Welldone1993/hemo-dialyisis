@@ -130,7 +130,7 @@ class TreatmentTimer extends GetView<TreatmentPageController> {
 
   Widget _hintText() => const FractionallySizedBox(
         heightFactor: 0.3,
-        widthFactor: 0.6,
+        widthFactor: 0.8,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.start,

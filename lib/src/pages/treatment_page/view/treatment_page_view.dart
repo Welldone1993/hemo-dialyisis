@@ -1,15 +1,14 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../components/button_with_icon.dart';
+
 import '../../../components/button_with_text.dart';
-import '../../../components/image_provider.dart';
 import '../../../components/scaffold.dart';
 import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
 import '../controller/treatment_controller.dart';
+import 'widget/treatment_statistics.dart';
 import 'widget/treatment_timer.dart';
 
 class TreatmentPageView extends GetView<TreatmentPageController> {
@@ -26,53 +25,17 @@ class TreatmentPageView extends GetView<TreatmentPageController> {
       ? _afterTreatment()
       : _beforeTreatment(context);
 
-  Widget _treatmentInfo(final BuildContext context) => DecoratedBox(
-        decoration: Decorations.cardDecoration(),
-        child: Row(
-          children: [
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: Constants.giantSpace),
-                child: CustomButtonWithIcon(
-                  action: () {},
-                  color: Constants.cardBackground,
-                  height: MediaQuery.of(context).size.height / 4,
-                  width: 100,
-                  child: const FractionallySizedBox(
-                    widthFactor: 0.9,
-                    heightFactor: 0.8,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Expanded(
-                            child: CustomImageProvider(
-                                imageAddress: Constants.pauseImage)),
-                        AutoSizeText(
-                          'وقفه در درمان',
-                          style: TextStyle(
-                              fontFamily: Constants.iranSansFont,
-                              fontWeight: FontWeight.bold),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            const Expanded(flex: 3, child: Placeholder())
-          ],
-        ),
-      );
 
-  Widget _beforeTreatment(final BuildContext context) => FractionallySizedBox(
+
+  Widget _beforeTreatment(final BuildContext context) =>
+      const FractionallySizedBox(
         heightFactor: 0.9,
         widthFactor: 0.9,
         child: Column(
           children: [
-            const Expanded(child: TreatmentTimer()),
+            Expanded(child: TreatmentTimer()),
             Constants.giantVerticalSpacer,
-            Expanded(child: _treatmentInfo(context))
+            Expanded(child: TreatmentStatistic())
           ],
         ),
       );
