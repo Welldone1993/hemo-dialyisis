@@ -25,35 +25,24 @@ class TreatmentPageView extends GetView<TreatmentPageController> {
       ? _afterTreatment()
       : _beforeTreatment(context);
 
-
-
-  Widget _beforeTreatment(final BuildContext context) =>
-      const FractionallySizedBox(
-        heightFactor: 0.9,
-        widthFactor: 0.9,
-        child: Column(
-          children: [
-            Expanded(child: TreatmentTimer()),
-            Constants.giantVerticalSpacer,
-            Expanded(child: TreatmentStatistic())
-          ],
-        ),
+  Widget _beforeTreatment(final BuildContext context) => const Column(
+        children: [
+          Expanded(child: TreatmentTimer()),
+          Constants.giantVerticalSpacer,
+          Expanded(child: TreatmentStatistic())
+        ],
       );
 
-  Widget _afterTreatment() => FractionallySizedBox(
-        heightFactor: 0.9,
-        widthFactor: 0.9,
-        child: DecoratedBox(
-          decoration: Decorations.cardDecoration(),
-          child: FractionallySizedBox(
-            heightFactor: 0.9,
-            widthFactor: 0.9,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(child: _actionButtons()),
-              ],
-            ),
+  Widget _afterTreatment() => DecoratedBox(
+        decoration: Decorations.cardDecoration(),
+        child: FractionallySizedBox(
+          heightFactor: 0.9,
+          widthFactor: 0.9,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(child: _actionButtons()),
+            ],
           ),
         ),
       );

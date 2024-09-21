@@ -21,33 +21,29 @@ class BloodReturnPageView extends GetView<BloodReturnController> {
         action2: const AppBarSupportIcon(),
       );
 
-  Widget _body() => FractionallySizedBox(
-        heightFactor: 0.9,
-        widthFactor: 0.9,
-        child: DecoratedBox(
-          decoration: Decorations.cardDecoration(),
-          child: FractionallySizedBox(
-            heightFactor: 0.9,
-            widthFactor: 0.9,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: Row(
-                    children: [
-                      const Expanded(
-                        child: CustomImageProvider(
-                          imageAddress: Constants.disconnectImage,
-                        ),
+  Widget _body() => DecoratedBox(
+        decoration: Decorations.cardDecoration(),
+        child: FractionallySizedBox(
+          heightFactor: 0.9,
+          widthFactor: 0.9,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 2,
+                child: Row(
+                  children: [
+                    const Expanded(
+                      child: CustomImageProvider(
+                        imageAddress: Constants.disconnectImage,
                       ),
-                      Expanded(flex: 2, child: _hintAndCheckBox()),
-                    ],
-                  ),
+                    ),
+                    Expanded(flex: 2, child: _hintAndCheckBox()),
+                  ],
                 ),
-                Expanded(flex: 3, child: _actionButtonAndTimer()),
-              ],
-            ),
+              ),
+              Expanded(flex: 3, child: _actionButtonAndTimer()),
+            ],
           ),
         ),
       );

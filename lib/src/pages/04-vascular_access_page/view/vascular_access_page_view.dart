@@ -20,22 +20,18 @@ class VascularAccessPageView extends GetView<VascularAccessController> {
         action2: const AppBarSupportIcon(),
       );
 
-  Widget _body() => FractionallySizedBox(
-        heightFactor: 0.85,
-        widthFactor: 0.85,
-        child: DecoratedBox(
-          decoration: Decorations.cardDecoration(),
-          child: FractionallySizedBox(
-            heightFactor: 0.8,
-            widthFactor: 0.8,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Expanded(child: _hintText()),
-                Expanded(child: _actionButtons()),
-              ],
-            ),
+  Widget _body() => DecoratedBox(
+        decoration: Decorations.cardDecoration(),
+        child: FractionallySizedBox(
+          heightFactor: 0.8,
+          widthFactor: 0.8,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Expanded(child: _hintText()),
+              Expanded(child: _actionButtons()),
+            ],
           ),
         ),
       );

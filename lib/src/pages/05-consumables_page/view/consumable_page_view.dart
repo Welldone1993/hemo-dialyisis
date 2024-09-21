@@ -22,38 +22,36 @@ class ConsumablesPageView extends GetView<ConsumablesPageController> {
         action2: const AppBarSupportIcon(),
       );
 
-  Widget _body() => FractionallySizedBox(
-        child: DecoratedBox(
-          decoration: Decorations.cardDecoration(),
-          child: Column(
-            children: [
-              Expanded(
-                flex: 11,
-                child: FractionallySizedBox(
-                  heightFactor: 0.9,
-                  widthFactor: 0.8,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Expanded(
-                        flex: 5,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Expanded(child: _consumableHintText()),
-                            ..._consumablesPart(),
-                          ],
-                        ),
+  Widget _body() => DecoratedBox(
+        decoration: Decorations.cardDecoration(),
+        child: Column(
+          children: [
+            Expanded(
+              flex: 11,
+              child: FractionallySizedBox(
+                heightFactor: 0.9,
+                widthFactor: 0.8,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Expanded(
+                      flex: 5,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Expanded(child: _consumableHintText()),
+                          ..._consumablesPart(),
+                        ],
                       ),
-                      Expanded(child: _actionButtons()),
-                    ],
-                  ),
+                    ),
+                    Expanded(child: _actionButtons()),
+                  ],
                 ),
               ),
-              Expanded(child: _storeHint()),
-            ],
-          ),
+            ),
+            Expanded(child: _storeHint()),
+          ],
         ),
       );
 

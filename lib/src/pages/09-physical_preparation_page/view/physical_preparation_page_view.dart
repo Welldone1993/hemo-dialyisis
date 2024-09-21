@@ -22,15 +22,12 @@ class PhysicalPreparationPageView
         action2: const AppBarSupportIcon(),
       );
 
-  Widget _body() => FractionallySizedBox(
-        heightFactor: 0.85,
-        child: Row(
-          children: [
-            Expanded(child: _helpPart()),
-            Expanded(flex: 2, child: _checkListPart()),
-          ],
-        ),
-      );
+  Widget _body() => Row(
+    children: [
+      Expanded(child: _helpPart()),
+      Expanded(flex: 2, child: _checkListPart()),
+    ],
+  );
 
   Widget _checkListPart() => DecoratedBox(
         decoration: Decorations.cardDecoration(),

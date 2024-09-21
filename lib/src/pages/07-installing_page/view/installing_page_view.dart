@@ -21,29 +21,25 @@ class InstallingPageView extends GetView<InstallingPageController> {
         action2: const AppBarSupportIcon(),
       );
 
-  Widget _body() => FractionallySizedBox(
-        heightFactor: 0.85,
-        widthFactor: 0.85,
-        child: DecoratedBox(
-          decoration: Decorations.cardDecoration(),
-          child: FractionallySizedBox(
-            heightFactor: 0.85,
-            widthFactor: 0.85,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Expanded(child: _hintText()),
-                Expanded(
-                  flex: 5,
-                  child: Row(
-                    children: [
-                      Expanded(child: _actionButtons()),
-                      Expanded(flex: 3, child: _checkList()),
-                    ],
-                  ),
+  Widget _body() => DecoratedBox(
+        decoration: Decorations.cardDecoration(),
+        child: FractionallySizedBox(
+          heightFactor: 0.85,
+          widthFactor: 0.85,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Expanded(child: _hintText()),
+              Expanded(
+                flex: 5,
+                child: Row(
+                  children: [
+                    Expanded(child: _actionButtons()),
+                    Expanded(flex: 3, child: _checkList()),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       );

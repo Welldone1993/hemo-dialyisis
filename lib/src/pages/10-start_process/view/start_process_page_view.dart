@@ -22,29 +22,25 @@ class StartProcessPageView extends GetView<StartProcessPageController> {
         action2: const AppBarSupportIcon(),
       );
 
-  Widget _body() => FractionallySizedBox(
-        heightFactor: 0.9,
-        widthFactor: 0.9,
-        child: DecoratedBox(
-          decoration: Decorations.cardDecoration(),
-          child: FractionallySizedBox(
-            heightFactor: 0.9,
-            widthFactor: 0.9,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  flex: 3,
-                  child: Row(
-                    children: [
-                      Expanded(child: _treatmentImage()),
-                      Expanded(flex: 3, child: _hintTextAndCheckItems()),
-                    ],
-                  ),
+  Widget _body() => DecoratedBox(
+        decoration: Decorations.cardDecoration(),
+        child: FractionallySizedBox(
+          heightFactor: 0.9,
+          widthFactor: 0.9,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 3,
+                child: Row(
+                  children: [
+                    Expanded(child: _treatmentImage()),
+                    Expanded(flex: 3, child: _hintTextAndCheckItems()),
+                  ],
                 ),
-                Expanded(child: _actionButtons()),
-              ],
-            ),
+              ),
+              Expanded(child: _actionButtons()),
+            ],
           ),
         ),
       );

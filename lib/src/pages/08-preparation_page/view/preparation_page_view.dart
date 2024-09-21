@@ -21,28 +21,24 @@ class PreparationPageView extends GetView<PreparationPageController> {
         action2: const AppBarSupportIcon(),
       );
 
-  Widget _body() => FractionallySizedBox(
-        heightFactor: 0.9,
-        widthFactor: 0.9,
-        child: DecoratedBox(
-          decoration: Decorations.cardDecoration(),
-          child: FractionallySizedBox(
-            heightFactor: 0.9,
-            widthFactor: 0.9,
-            child: Obx(
-              () => Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    flex: 3,
-                    child: _primeImageAndHints(),
-                  ),
-                  if (!controller.isPreparationMode.value)
-                    Expanded(child: _actionButtons()),
-                  if (controller.isPreparationMode.value)
-                    Expanded(child: _timer())
-                ],
-              ),
+  Widget _body() => DecoratedBox(
+        decoration: Decorations.cardDecoration(),
+        child: FractionallySizedBox(
+          heightFactor: 0.9,
+          widthFactor: 0.9,
+          child: Obx(
+            () => Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: _primeImageAndHints(),
+                ),
+                if (!controller.isPreparationMode.value)
+                  Expanded(child: _actionButtons()),
+                if (controller.isPreparationMode.value)
+                  Expanded(child: _timer())
+              ],
             ),
           ),
         ),
@@ -191,7 +187,7 @@ class PreparationPageView extends GetView<PreparationPageController> {
                         fontFamily: Constants.iranSansFaNumFont,
                         fontWeight: FontWeight.w500,
                         fontSize: 35,
-                        ),
+                      ),
                     ),
                   ),
                 ),

@@ -21,29 +21,25 @@ class WeighingPageView extends GetView<WeighingPageController> {
         action2: const AppBarSupportIcon(),
       );
 
-  Widget _body() => FractionallySizedBox(
-        heightFactor: 0.85,
-        widthFactor: 0.85,
-        child: DecoratedBox(
-          decoration: Decorations.cardDecoration(),
-          child: FractionallySizedBox(
-            heightFactor: 0.8,
-            widthFactor: 0.8,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: Row(
-                    children: [
-                      Expanded(child: _weighingPart()),
-                      Expanded(child: _hintText()),
-                    ],
-                  ),
+  Widget _body() => DecoratedBox(
+        decoration: Decorations.cardDecoration(),
+        child: FractionallySizedBox(
+          heightFactor: 0.8,
+          widthFactor: 0.8,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Row(
+                  children: [
+                    Expanded(child: _weighingPart()),
+                    Expanded(child: _hintText()),
+                  ],
                 ),
-                Expanded(child: _actionButtons()),
-              ],
-            ),
+              ),
+              Expanded(child: _actionButtons()),
+            ],
           ),
         ),
       );

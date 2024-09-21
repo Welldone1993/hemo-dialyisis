@@ -40,17 +40,14 @@ class HomePageView extends GetView<HomePageController> {
         ),
       );
 
-  Widget _body(final BuildContext context) => Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(flex: 3, child: _profileCard()),
-            const Spacer(),
-            Expanded(flex: 6, child: _startProcessCard(context)),
-          ],
-        ),
-      );
+  Widget _body(final BuildContext context) => Row(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Expanded(flex: 3, child: _profileCard()),
+      const Spacer(),
+      Expanded(flex: 6, child: _startProcessCard(context)),
+    ],
+  );
 
   Widget _profileCard() => FractionallySizedBox(
         heightFactor: 1,
