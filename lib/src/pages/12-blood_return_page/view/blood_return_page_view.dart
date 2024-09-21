@@ -5,6 +5,7 @@ import '../../../components/button_with_text.dart';
 import '../../../components/checkbox.dart';
 import '../../../components/image_provider.dart';
 import '../../../components/scaffold.dart';
+import '../../../infrastructure/app_controller/app_controller.dart';
 import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
@@ -74,38 +75,43 @@ class BloodReturnPageView extends GetView<BloodReturnController> {
               child: FractionallySizedBox(
                 heightFactor: 0.8,
                 widthFactor: 1,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Expanded(
-                      child: AutoSizeText(
-                        'بازگشت خون',
-                        style: TextStyle(
-                          fontFamily: Constants.iranSansFont,
-                          color: Constants.disableColor,
-                          fontWeight: FontWeight.w500,
+                child: Obx(
+                  () => Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Expanded(
+                        child: AutoSizeText(
+                          'بازگشت خون',
+                          style: TextStyle(
+                            fontFamily: Constants.iranSansFont,
+                            color: Constants.disableColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize:
+                                AppController().setting.value!.titleFontSize,
+                          ),
+                          textDirection: TextDirection.rtl,
                         ),
-                        textDirection: TextDirection.rtl,
                       ),
-                    ),
-                    const Expanded(
-                      child: AutoSizeText(
-                        'پس از بازگشت خون، درمان شما به اتمام میرسد.',
-                        style: TextStyle(
-                          fontFamily: Constants.iranSansFont,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                      Expanded(
+                        child: AutoSizeText(
+                          'پس از بازگشت خون، درمان شما به اتمام میرسد.',
+                          style: TextStyle(
+                            fontFamily: Constants.iranSansFont,
+                            fontSize:
+                                AppController().setting.value!.valueFontSize,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textDirection: TextDirection.rtl,
                         ),
-                        textDirection: TextDirection.rtl,
                       ),
-                    ),
-                    if (!controller.isReturningBlood.value)
-                      Expanded(child: _bloodReturnHint()),
-                    const Spacer(),
-                    const Spacer(),
-                  ],
+                      if (!controller.isReturningBlood.value)
+                        Expanded(child: _bloodReturnHint()),
+                      const Spacer(),
+                      const Spacer(),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -136,11 +142,11 @@ class BloodReturnPageView extends GetView<BloodReturnController> {
         ),
       );
 
-  Widget _bloodReturnHint() => const Row(
+  Widget _bloodReturnHint() => Row(
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Spacer(),
+          const Spacer(),
           Expanded(
             flex: 2,
             child: AutoSizeText(
@@ -148,12 +154,13 @@ class BloodReturnPageView extends GetView<BloodReturnController> {
               style: TextStyle(
                 fontFamily: Constants.iranSansFont,
                 color: Constants.disableColor,
+                fontSize: AppController().setting.value!.titleFontSize,
               ),
               textDirection: TextDirection.rtl,
             ),
           ),
           Constants.mediumHorizontalSpacer,
-          Icon(
+          const Icon(
             CupertinoIcons.info,
             color: Constants.disableColor,
           ),

@@ -6,6 +6,7 @@ import '../../../components/button_with_text.dart';
 import '../../../components/checkbox.dart';
 import '../../../components/image_provider.dart';
 import '../../../components/scaffold.dart';
+import '../../../infrastructure/app_controller/app_controller.dart';
 import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
@@ -51,63 +52,66 @@ class StartProcessPageView extends GetView<StartProcessPageController> {
 
   Widget _hintTextAndCheckItems() => FractionallySizedBox(
         heightFactor: 0.5,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const Expanded(
-              flex: 3,
-              child: AutoSizeText(
-                'شروع درمان',
-                style: TextStyle(
-                  fontFamily: Constants.iranSansFont,
-                  color: Constants.disableColor,
-                  fontWeight: FontWeight.w500,
+        child: Obx(
+          () => Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 3,
+                child: AutoSizeText(
+                  'شروع درمان',
+                  style: TextStyle(
+                    fontFamily: Constants.iranSansFont,
+                    color: Constants.disableColor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: AppController().setting.value!.titleFontSize,
+                  ),
+                  textDirection: TextDirection.rtl,
                 ),
-                textDirection: TextDirection.rtl,
               ),
-            ),
-            const Expanded(
-              flex: 3,
-              child: AutoSizeText(
-                'دستگاه برای شروع درمان حاضر است.',
-                style: TextStyle(
-                  fontFamily: Constants.iranSansFont,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+              Expanded(
+                flex: 3,
+                child: AutoSizeText(
+                  'دستگاه برای شروع درمان حاضر است.',
+                  style: TextStyle(
+                    fontFamily: Constants.iranSansFont,
+                    fontSize: AppController().setting.value!.valueFontSize,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textDirection: TextDirection.rtl,
                 ),
-                textDirection: TextDirection.rtl,
               ),
-            ),
-            Expanded(flex: 3, child: _startTreatmentHint()),
-            const Spacer(),
-            const Spacer(),
-            const Spacer(),
-            Expanded(
-              flex: 2,
-              child: CustomCheckbox(
-                label: 'ست های شریانی را بار دیگر چک کنید.',
-                action: () {},
+              Expanded(flex: 3, child: _startTreatmentHint()),
+              const Spacer(),
+              const Spacer(),
+              const Spacer(),
+              Expanded(
+                flex: 2,
+                child: CustomCheckbox(
+                  label: 'ست های شریانی را بار دیگر چک کنید.',
+                  action: () {},
+                ),
               ),
-            ),
-            const Spacer(),
-            const Spacer(),
-            Expanded(
-              flex: 2,
-              child: CustomCheckbox(
-                label: 'اتصالات صافی و ست شریانی و ست مایعات را چک کنید.',
-                action: () {},
+              const Spacer(),
+              const Spacer(),
+              Expanded(
+                flex: 2,
+                child: CustomCheckbox(
+                  label: 'اتصالات صافی و ست شریانی و ست مایعات را چک کنید.',
+                  action: () {},
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
 
-  Widget _startTreatmentHint() => const Row(
+  Widget _startTreatmentHint() => Row(
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Spacer(),
+          const Spacer(),
           Expanded(
             flex: 2,
             child: AutoSizeText(
@@ -115,12 +119,13 @@ class StartProcessPageView extends GetView<StartProcessPageController> {
               style: TextStyle(
                 fontFamily: Constants.iranSansFont,
                 color: Constants.disableColor,
+                fontSize: AppController().setting.value!.titleFontSize,
               ),
               textDirection: TextDirection.rtl,
             ),
           ),
           Constants.mediumHorizontalSpacer,
-          Icon(
+          const Icon(
             CupertinoIcons.info,
             color: Constants.disableColor,
           ),

@@ -90,15 +90,10 @@ class Constants {
       color: Colors.white,
       fontFamily: iranSansFont);
 
-  static const defaultTextStyle =
-      TextStyle(fontFamily: iranSansFont, fontSize: 20);
+
+
   static const thinTextStyle = TextStyle(
     fontFamily: iranSansFont,
-  );
-
-  static const disableTextStyle = TextStyle(
-    fontFamily: iranSansFont,
-    color: disableColor,
   );
 
   static width(

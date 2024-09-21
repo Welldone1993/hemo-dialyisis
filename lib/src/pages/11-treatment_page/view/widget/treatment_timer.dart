@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../infrastructure/app_controller/app_controller.dart';
 import '../../../../infrastructure/utils/constants.dart';
 import '../../../../infrastructure/utils/decorations.dart';
 import '../../controller/treatment_controller.dart';
@@ -128,36 +129,39 @@ class TreatmentTimer extends GetView<TreatmentPageController> {
         ),
       );
 
-  Widget _hintText() => const FractionallySizedBox(
+  Widget _hintText() => FractionallySizedBox(
         heightFactor: 0.3,
         widthFactor: 0.8,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Expanded(
-              child: AutoSizeText(
-                'در حال درمان',
-                style: TextStyle(
-                  fontFamily: Constants.iranSansFont,
-                  color: Constants.disableColor,
-                  fontWeight: FontWeight.w500,
+        child: Obx(
+          () => Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Expanded(
+                child: AutoSizeText(
+                  'در حال درمان',
+                  style: TextStyle(
+                    fontFamily: Constants.iranSansFont,
+                    color: Constants.disableColor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: AppController().setting.value!.titleFontSize,
+                  ),
+                  textDirection: TextDirection.rtl,
                 ),
-                textDirection: TextDirection.rtl,
               ),
-            ),
-            Expanded(
-              child: AutoSizeText(
-                'همودیالیز در حال انجام است....',
-                style: TextStyle(
-                  fontFamily: Constants.iranSansFont,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+              Expanded(
+                child: AutoSizeText(
+                  'همودیالیز در حال انجام است....',
+                  style: TextStyle(
+                    fontFamily: Constants.iranSansFont,
+                    fontSize: AppController().setting.value!.valueFontSize,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textDirection: TextDirection.rtl,
                 ),
-                textDirection: TextDirection.rtl,
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
 }

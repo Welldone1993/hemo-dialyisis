@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../../../components/button_with_text.dart';
 import '../../../components/checkbox.dart';
 import '../../../components/scaffold.dart';
+import '../../../infrastructure/app_controller/app_controller.dart';
 import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
@@ -23,11 +24,11 @@ class PhysicalPreparationPageView
       );
 
   Widget _body() => Row(
-    children: [
-      Expanded(child: _helpPart()),
-      Expanded(flex: 2, child: _checkListPart()),
-    ],
-  );
+        children: [
+          Expanded(child: _helpPart()),
+          Expanded(flex: 2, child: _checkListPart()),
+        ],
+      );
 
   Widget _checkListPart() => DecoratedBox(
         decoration: Decorations.cardDecoration(),
@@ -88,33 +89,36 @@ class PhysicalPreparationPageView
         ],
       );
 
-  Widget _hintText() => const Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Expanded(
-            child: AutoSizeText(
-              'آماده سازی ست شریانی',
-              style: TextStyle(
-                fontFamily: Constants.iranSansFont,
-                color: Constants.disableColor,
-                fontWeight: FontWeight.w500,
+  Widget _hintText() => Obx(
+        () => Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Expanded(
+              child: AutoSizeText(
+                'آماده سازی ست شریانی',
+                style: TextStyle(
+                  fontFamily: Constants.iranSansFont,
+                  color: Constants.disableColor,
+                  fontWeight: FontWeight.w500,
+                  fontSize: AppController().setting.value!.titleFontSize,
+                ),
+                textDirection: TextDirection.rtl,
               ),
-              textDirection: TextDirection.rtl,
             ),
-          ),
-          Expanded(
-            child: AutoSizeText(
-              'لطفا موارد زیر را انجام داده و با انجام هر مرحله تیک کنار آن را فعال کنید.',
-              style: TextStyle(
-                fontFamily: Constants.iranSansFont,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+            Expanded(
+              child: AutoSizeText(
+                'لطفا موارد زیر را انجام داده و با انجام هر مرحله تیک کنار آن را فعال کنید.',
+                style: TextStyle(
+                  fontFamily: Constants.iranSansFont,
+                  fontSize: AppController().setting.value!.valueFontSize,
+                  fontWeight: FontWeight.bold,
+                ),
+                textDirection: TextDirection.rtl,
               ),
-              textDirection: TextDirection.rtl,
             ),
-          ),
-          Spacer(),
-        ],
+            Spacer(),
+          ],
+        ),
       );
 }

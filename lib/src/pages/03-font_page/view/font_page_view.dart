@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import '../../../components/button_with_text.dart';
 import '../../../components/scaffold.dart';
+import '../../../infrastructure/app_controller/app_controller.dart';
 import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
@@ -24,13 +25,15 @@ class FontPageView extends GetView<FontPageController> {
         child: FractionallySizedBox(
           heightFactor: 0.8,
           widthFactor: 0.8,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Expanded(child: _fontHintText()),
-              Expanded(child: _actionButtons()),
-            ],
+          child: Obx(
+            ()=> Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Expanded(child: _fontHintText()),
+                Expanded(child: _actionButtons()),
+              ],
+            ),
           ),
         ),
       );
@@ -48,20 +51,21 @@ class FontPageView extends GetView<FontPageController> {
           Expanded(
             child: CustomButtonWithText.secondary(
               label: 'بزرگتر شود',
-              action: () {},
+              action: controller.increaseFont,
             ),
           ),
           const Spacer(),
           Expanded(
             child: CustomButtonWithText.outline(
               label: 'کوچکتر شود',
-              action: () {},
+              action: controller.decreaseFont,
+
             ),
           ),
         ],
       );
 
-  Widget _fontHintText() => const FractionallySizedBox(
+  Widget _fontHintText() => FractionallySizedBox(
         heightFactor: 0.8,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -73,6 +77,7 @@ class FontPageView extends GetView<FontPageController> {
                   fontFamily: Constants.iranSansFont,
                   color: Constants.disableColor,
                   fontWeight: FontWeight.w500,
+                  fontSize: AppController().setting.value!.titleFontSize,
                 ),
                 textDirection: TextDirection.rtl,
               ),
@@ -82,14 +87,14 @@ class FontPageView extends GetView<FontPageController> {
                 'اندازه نوشته ها مناسب است؟',
                 style: TextStyle(
                   fontFamily: Constants.iranSansFont,
-                  fontSize: 20,
                   fontWeight: FontWeight.bold,
+                  fontSize: AppController().setting.value!.valueFontSize,
                 ),
                 textDirection: TextDirection.rtl,
               ),
             ),
-            Spacer(),
-            Spacer(),
+            const Spacer(),
+            const Spacer(),
           ],
         ),
       );

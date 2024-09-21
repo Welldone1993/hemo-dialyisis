@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../../components/button_with_icon.dart';
 import '../../../../components/image_provider.dart';
+import '../../../../infrastructure/app_controller/app_controller.dart';
 import '../../../../infrastructure/utils/constants.dart';
 import '../../../../infrastructure/utils/decorations.dart';
 import '../../controller/treatment_controller.dart';
@@ -26,13 +27,15 @@ class TreatmentStatistic extends GetView<TreatmentPageController> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      const Expanded(
+                      Expanded(
                         child: AutoSizeText(
                           'علائم حیاتی',
                           style: TextStyle(
                             fontFamily: Constants.iranSansFont,
                             color: Constants.disableColor,
                             fontWeight: FontWeight.w500,
+                            fontSize:
+                                AppController().setting.value!.titleFontSize,
                           ),
                         ),
                       ),

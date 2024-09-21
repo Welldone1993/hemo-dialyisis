@@ -8,6 +8,7 @@ import '../../../components/button_with_text.dart';
 import '../../../components/image_provider.dart';
 import '../../../components/scaffold.dart';
 import '../../../components/text_button.dart';
+import '../../../infrastructure/app_controller/app_controller.dart';
 import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_support_icon.dart';
@@ -41,13 +42,13 @@ class HomePageView extends GetView<HomePageController> {
       );
 
   Widget _body(final BuildContext context) => Row(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Expanded(flex: 3, child: _profileCard()),
-      const Spacer(),
-      Expanded(flex: 6, child: _startProcessCard(context)),
-    ],
-  );
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(flex: 3, child: _profileCard()),
+          const Spacer(),
+          Expanded(flex: 6, child: _startProcessCard(context)),
+        ],
+      );
 
   Widget _profileCard() => FractionallySizedBox(
         heightFactor: 1,
@@ -195,20 +196,29 @@ class HomePageView extends GetView<HomePageController> {
         ],
       );
 
-  Widget _texts() => const FittedBox(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            AutoSizeText(
-              'شروع درمان',
-              style: Constants.disableTextStyle,
-            ),
-            AutoSizeText(
-              'برای درمان آماده اید؟',
-              style: Constants.defaultTextStyle,
-            ),
-          ],
+  Widget _texts() => FittedBox(
+        child: Obx(
+          () => Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              AutoSizeText(
+                'شروع درمان',
+                style: TextStyle(
+                  fontFamily: Constants.iranSansFont,
+                  color: Constants.disableColor,
+                  fontSize: AppController().setting.value!.titleFontSize,
+                ),
+              ),
+              AutoSizeText(
+                'برای درمان آماده اید؟',
+                style: TextStyle(
+                  fontFamily: Constants.iranSansFont,
+                  fontSize: AppController().setting.value!.valueFontSize,
+                ),
+              ),
+            ],
+          ),
         ),
       );
 

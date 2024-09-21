@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../../../components/button_with_text.dart';
 import '../../../components/chip.dart';
 import '../../../components/scaffold.dart';
+import '../../../infrastructure/app_controller/app_controller.dart';
 import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
@@ -120,34 +121,37 @@ class ConsumablesPageView extends GetView<ConsumablesPageController> {
         ),
       );
 
-  Widget _consumableHintText() => const FractionallySizedBox(
+  Widget _consumableHintText() => FractionallySizedBox(
         heightFactor: 0.8,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Expanded(
-              child: AutoSizeText(
-                'لیست مواد مصرفی',
-                style: TextStyle(
-                  fontFamily: Constants.iranSansFont,
-                  color: Constants.disableColor,
-                  fontWeight: FontWeight.w500,
+        child: Obx(
+          () => Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Expanded(
+                child: AutoSizeText(
+                  'لیست مواد مصرفی',
+                  style: TextStyle(
+                    fontFamily: Constants.iranSansFont,
+                    color: Constants.disableColor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: AppController().setting.value!.titleFontSize,
+                  ),
+                  textDirection: TextDirection.rtl,
                 ),
-                textDirection: TextDirection.rtl,
               ),
-            ),
-            Expanded(
-              child: AutoSizeText(
-                'مواردی که در خانه موجود دارید را از لیست زیر انتخاب کنید.',
-                style: TextStyle(
-                  fontFamily: Constants.iranSansFont,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+              Expanded(
+                child: AutoSizeText(
+                  'مواردی که در خانه موجود دارید را از لیست زیر انتخاب کنید.',
+                  style: TextStyle(
+                    fontFamily: Constants.iranSansFont,
+                    fontSize: AppController().setting.value!.valueFontSize,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textDirection: TextDirection.rtl,
                 ),
-                textDirection: TextDirection.rtl,
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
 
