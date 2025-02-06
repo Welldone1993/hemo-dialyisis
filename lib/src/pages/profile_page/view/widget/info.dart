@@ -9,11 +9,36 @@ class PatientInfo extends GetView<ProfilePageController> {
 
   @override
   Widget build(BuildContext context) => DecoratedBox(
-        decoration: Decorations.cardDecoration(),
+        decoration: Decorations.secondaryCardDecoration(),
         child: const FractionallySizedBox(
           heightFactor: 0.8,
-          widthFactor: 0.8,
+          widthFactor: 0.95,
           child: Placeholder(),
         ),
       );
+
+// Widget _body() => Obx(
+//       () => DecoratedBox(
+//         decoration: Decorations.secondaryCardDecoration(),
+//         child: FractionallySizedBox(
+//           heightFactor: 0.95,
+//           widthFactor: 0.95,
+//           child: controller.canShowData.value ? _data() : const SizedBox(),
+//         ),
+//       ),
+//     );
+
+// Widget _data2() => const Row(
+//       children: [
+//         Expanded(
+//           child: Column(
+//             children: [
+//               Expanded(flex: 3, child: PrescriptionInfo()),
+//               Expanded(flex: 5, child: PatientInfo()),
+//             ],
+//           ),
+//         ),
+//         Expanded(child: PersonalInfo()),
+//       ],
+//     );
 }

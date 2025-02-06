@@ -8,45 +8,81 @@ import '../../shared/view/app_bar_back_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
 import '../controller/profile_page_controller.dart';
 import '../model/enum/profile_header_button_enum.dart';
-import 'widget/patient_info.dart';
-import 'widget/personal_info.dart';
-import 'widget/prescription_info.dart';
+import 'widget/info.dart';
 
 class ProfilePageView extends GetView<ProfilePageController> {
   const ProfilePageView({super.key});
 
   @override
   Widget build(BuildContext context) => CustomScaffold(
-        body: _body2(),
+        body: _body(context),
         action1: const AppBarBackIcon(),
         action2: const AppBarSupportIcon(),
       );
 
-  Widget _body2() => Obx(
+  Widget _body(BuildContext context) => Obx(
         () => DecoratedBox(
           decoration: Decorations.creamyCardDecoration(),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _profileHeaderButton(
-                    header: ProfileHeaderButtonEnum.prescription,
-                  ),
-                  Constants.mediumHorizontalSpacer,
-                  _profileHeaderButton(
-                    header: ProfileHeaderButtonEnum.info,
-                  ),
-                ],
-              ),
-              // Expanded(
-              //   child: const FractionallySizedBox(
-              //     heightFactor: 0.8,
-              //     widthFactor: 0.8,
-              //     child: Placeholder(),
-              //   ),
-              // ),
+              _header(context),
+              controller.canShowData.value
+                  ? Expanded(
+                      child: Padding(
+                        padding: Constants.giantPadding,
+                        child: _data(),
+                      ),
+                    )
+                  : const SizedBox(),
             ],
+          ),
+        ),
+      );
+
+  Widget _data() => switch (controller.selectedHeader.value) {
+        ProfileHeaderButtonEnum.info => const PatientInfo(),
+        ProfileHeaderButtonEnum.prescription =>
+          Text(ProfileHeaderButtonEnum.prescription.title),
+        ProfileHeaderButtonEnum.treatmentCalendar =>
+          Text(ProfileHeaderButtonEnum.treatmentCalendar.title),
+        ProfileHeaderButtonEnum.reports =>
+          Text(ProfileHeaderButtonEnum.reports.title),
+        ProfileHeaderButtonEnum.medicalRecords =>
+          Text(ProfileHeaderButtonEnum.medicalRecords.title),
+      };
+
+  Widget _header(BuildContext context) => ScrollConfiguration(
+        behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minWidth: MediaQuery.of(context).size.width,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _profileHeaderButton(
+                  header: ProfileHeaderButtonEnum.medicalRecords,
+                ),
+                Constants.mediumHorizontalSpacer,
+                _profileHeaderButton(
+                  header: ProfileHeaderButtonEnum.reports,
+                ),
+                Constants.mediumHorizontalSpacer,
+                _profileHeaderButton(
+                  header: ProfileHeaderButtonEnum.treatmentCalendar,
+                ),
+                Constants.mediumHorizontalSpacer,
+                _profileHeaderButton(
+                  header: ProfileHeaderButtonEnum.prescription,
+                ),
+                Constants.mediumHorizontalSpacer,
+                _profileHeaderButton(
+                  header: ProfileHeaderButtonEnum.info,
+                ),
+              ],
+            ),
           ),
         ),
       );
@@ -78,7 +114,10 @@ class ProfilePageView extends GetView<ProfilePageController> {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: Constants.xLargeSpace,vertical: Constants.largeSpace),
+            padding: const EdgeInsets.symmetric(
+              horizontal: Constants.giantSpace,
+              vertical: Constants.largeSpace,
+            ),
             child: Text(
               header.title,
               style: TextStyle(
@@ -92,30 +131,5 @@ class ProfilePageView extends GetView<ProfilePageController> {
             ),
           ),
         ),
-      );
-
-  Widget _body() => Obx(
-        () => DecoratedBox(
-          decoration: Decorations.secondaryCardDecoration(),
-          child: FractionallySizedBox(
-            heightFactor: 0.95,
-            widthFactor: 0.95,
-            child: controller.canShowData.value ? _data() : const SizedBox(),
-          ),
-        ),
-      );
-
-  Widget _data() => const Row(
-        children: [
-          Expanded(
-            child: Column(
-              children: [
-                Expanded(flex: 3, child: PrescriptionInfo()),
-                Expanded(flex: 5, child: PatientInfo()),
-              ],
-            ),
-          ),
-          Expanded(child: PersonalInfo()),
-        ],
       );
 }
