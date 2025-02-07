@@ -151,7 +151,7 @@ class Info extends GetView<ProfilePageController> {
 
   Widget _editIcon() => const Icon(
         Icons.edit_note,
-        color: Constants.buttonThirdColor,
+        color: Constants.iconFirstColor,
         size: Constants.giantSpace,
       );
 
