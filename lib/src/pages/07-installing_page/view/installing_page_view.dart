@@ -96,7 +96,7 @@ class InstallingPageView extends GetView<InstallingPageController> {
                 textDirection: TextDirection.rtl,
               ),
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       );

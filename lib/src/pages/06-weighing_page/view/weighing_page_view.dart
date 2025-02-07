@@ -128,7 +128,7 @@ class WeighingPageView extends GetView<WeighingPageController> {
                   textDirection: TextDirection.rtl,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ),

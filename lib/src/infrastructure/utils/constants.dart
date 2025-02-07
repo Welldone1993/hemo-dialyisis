@@ -23,7 +23,6 @@ class Constants {
   static const Color filterButtonBorderColor = Color(0xffCECDC1);
   static const Color successColor = Color(0xff09B26F);
 
-
   static const String startImage = 'lib/assets/process/start.png';
   static const String primeImage = 'lib/assets/process/prime.png';
   static const String treatmentImage = 'lib/assets/process/treatment.png';
@@ -88,11 +87,11 @@ class Constants {
   static const String iranSansFaNumFont = 'IranSansFaNum';
 
   static const boldTextStyle = TextStyle(
-      fontWeight: FontWeight.bold,
-      color: Colors.white,
-      fontFamily: iranSansFont);
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+    fontFamily: iranSansFont,
 
-
+  );
 
   static const thinTextStyle = TextStyle(
     fontFamily: iranSansFont,

@@ -9,6 +9,10 @@ import '../../shared/view/app_bar_support_icon.dart';
 import '../controller/profile_page_controller.dart';
 import '../model/enum/profile_header_button_enum.dart';
 import 'widget/info.dart';
+import 'widget/medical_records.dart';
+import 'widget/prescription.dart';
+import 'widget/reports.dart';
+import 'widget/treatment_calendar.dart';
 
 class ProfilePageView extends GetView<ProfilePageController> {
   const ProfilePageView({super.key});
@@ -40,15 +44,11 @@ class ProfilePageView extends GetView<ProfilePageController> {
       );
 
   Widget _data() => switch (controller.selectedHeader.value) {
-        ProfileHeaderButtonEnum.info => const PatientInfo(),
-        ProfileHeaderButtonEnum.prescription =>
-          Text(ProfileHeaderButtonEnum.prescription.title),
-        ProfileHeaderButtonEnum.treatmentCalendar =>
-          Text(ProfileHeaderButtonEnum.treatmentCalendar.title),
-        ProfileHeaderButtonEnum.reports =>
-          Text(ProfileHeaderButtonEnum.reports.title),
-        ProfileHeaderButtonEnum.medicalRecords =>
-          Text(ProfileHeaderButtonEnum.medicalRecords.title),
+        ProfileHeaderButtonEnum.info => const Info(),
+        ProfileHeaderButtonEnum.prescription => const Prescription(),
+        ProfileHeaderButtonEnum.treatmentCalendar => const TreatmentCalendar(),
+        ProfileHeaderButtonEnum.reports => const Reports(),
+        ProfileHeaderButtonEnum.medicalRecords => const MedicalRecords(),
       };
 
   Widget _header(BuildContext context) => ScrollConfiguration(
