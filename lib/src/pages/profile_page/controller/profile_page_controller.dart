@@ -6,7 +6,7 @@ class ProfilePageController extends GetxController {
   RxBool canShowData = false.obs;
 
   Rx<ProfileHeaderButtonEnum> selectedHeader = ProfileHeaderButtonEnum.info.obs;
-
+  DateTime today = DateTime.now();
   @override
   void onInit() {
     Future.delayed(

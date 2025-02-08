@@ -17,6 +17,9 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   cupertino_icons: ^1.0.8
   timer_count_down: ^2.2.2
+  jalali_table_calendar: ^1.0.2
+  flutter_persian_calendar: ^0.0.3
+
 
 dev_dependencies:
   flutter_test:
@@ -58,7 +61,7 @@ flutter:
           weight: 500
         - asset: lib/assets/fonts/iran_sans_fa_num_bold.ttf
           weight: 900
-#        - asset: lib/assets/fonts/iran_sans_fa_num_medium.ttf
+  #        - asset: lib/assets/fonts/iran_sans_fa_num_medium.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

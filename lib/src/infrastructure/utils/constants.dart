@@ -5,6 +5,7 @@ class Constants {
   static const Color buttonColor = Color(0xffFF6A5E);
   static const Color buttonSecondaryColor = Color(0xff465B54);
   static const Color buttonThirdColor = Color(0xffC2D0D8);
+  static const Color buttonFourthColor = Color(0xff7FA2BB);
   static const Color buttonOutlineTextColor = Color(0xff415A70);
   static const Color buttonShadowColor = Color(0xff151513);
   static const Color selectedChipColor = Color(0xff60809C);
@@ -18,7 +19,6 @@ class Constants {
   static const Color pinkColor = Color(0xffF4B5AF);
   static const Color creamyColor = Color(0xffD8D7CD);
   static const Color categoryTitleColor = Color(0xff217868);
-  static const Color starColor = Color(0xffFF845E);
   static const Color filterButtonColor = Color(0xffF0F0EC);
   static const Color filterButtonBorderColor = Color(0xffCECDC1);
   static const Color successColor = Color(0xff09B26F);
@@ -93,7 +93,6 @@ class Constants {
     fontWeight: FontWeight.bold,
     color: Colors.white,
     fontFamily: iranSansFont,
-
   );
 
   static const thinTextStyle = TextStyle(

@@ -127,7 +127,7 @@ class Info extends GetView<ProfilePageController> {
           Expanded(child: _titleText('نام خانوادگی:')),
           Expanded(child: _titleText('سن:')),
           Expanded(
-            child: _titleText('گروه خونی:', textColor: Constants.starColor),
+            child: _titleText('گروه خونی:', textColor: Constants.iconThirdColor),
           ),
         ],
       );
@@ -142,7 +142,7 @@ class Info extends GetView<ProfilePageController> {
           Expanded(
             child: _dataText(
               '+O',
-              textColor: Constants.starColor,
+              textColor: Constants.iconThirdColor,
               fontWeight: FontWeight.bold,
             ),
           ),

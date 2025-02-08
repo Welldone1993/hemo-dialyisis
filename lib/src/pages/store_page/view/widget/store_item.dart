@@ -160,7 +160,7 @@ class StoreItem extends GetView<StorePageController> {
           const Expanded(
             child: Icon(
               FontAwesomeIcons.solidStar,
-              color: Constants.starColor,
+              color: Constants.iconThirdColor,
               size: 15,
             ),
           ),
