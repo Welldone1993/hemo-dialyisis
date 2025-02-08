@@ -25,6 +25,7 @@ class Constants {
   static const Color iconFirstColor = Color(0xffBDE3FF);
   static const Color iconSecondColor = Color(0xff5780A4);
   static const Color iconThirdColor = Color(0xffFF845E);
+  static const Color lineChartColor = Color(0xffBFA900);
 
   static const String startImage = 'lib/assets/process/start.png';
   static const String primeImage = 'lib/assets/process/prime.png';
