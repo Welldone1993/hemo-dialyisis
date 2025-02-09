@@ -35,6 +35,7 @@ flutter:
     - lib/assets/
     - lib/assets/store/
     - lib/assets/process/
+    - lib/assets/stepper/
 
 
   fonts:

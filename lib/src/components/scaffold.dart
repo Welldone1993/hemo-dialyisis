@@ -17,6 +17,7 @@ class CustomScaffold extends StatefulWidget {
     this.action1,
     this.action2,
     this.action3,
+    this.stepper,
   });
 
   final bool? showEndDrawer;
@@ -27,6 +28,7 @@ class CustomScaffold extends StatefulWidget {
   final Widget? action1;
   final Widget? action2;
   final Widget? action3;
+  final Widget? stepper;
 
   @override
   State<CustomScaffold> createState() => _CustomScaffoldState();
@@ -144,18 +146,26 @@ class _CustomScaffoldState extends State<CustomScaffold> {
         ),
       );
 
-  Widget _body() => DecoratedBox(
-        decoration: const BoxDecoration(
-          color: Constants.backgroundColor,
-        ),
-        child: LayoutBuilder(
-          builder: (context, constraints) => Center(
-            child: SizedBox(
-              height: constraints.maxHeight * 0.90,
-              width: constraints.maxWidth * 0.95,
-              child: widget.body,
+  Widget _body() => Column(
+        children: [
+          if (widget.stepper != null) Expanded(child: widget.stepper!),
+          Expanded(
+            flex: 6,
+            child: DecoratedBox(
+              decoration: const BoxDecoration(
+                color: Constants.backgroundColor,
+              ),
+              child: LayoutBuilder(
+                builder: (context, constraints) => Center(
+                  child: SizedBox(
+                    height: constraints.maxHeight * 0.90,
+                    width: constraints.maxWidth * 0.95,
+                    child: widget.body,
+                  ),
+                ),
+              ),
             ),
           ),
-        ),
+        ],
       );
 }

@@ -33,6 +33,20 @@ class Constants {
   static const String disconnectImage = 'lib/assets/process/disconnect.png';
   static const String pauseImage = 'lib/assets/process/pause.png';
 
+  static const String step01 = 'lib/assets/stepper/01.png';
+  static const String step02 = 'lib/assets/stepper/02.png';
+  static const String step03 = 'lib/assets/stepper/03.png';
+  static const String step04 = 'lib/assets/stepper/04.png';
+  static const String step05 = 'lib/assets/stepper/05.png';
+  static const String step06 = 'lib/assets/stepper/06.png';
+  static const String step07 = 'lib/assets/stepper/07.png';
+  static const String step08 = 'lib/assets/stepper/08.png';
+  static const String step09 = 'lib/assets/stepper/09.png';
+  static const String step10 = 'lib/assets/stepper/10.png';
+  static const String step11 = 'lib/assets/stepper/11.png';
+
+
+
   static const String avatarImage = 'lib/assets/avatar.png';
 
   static const String deviceImage = 'lib/assets/device.png';

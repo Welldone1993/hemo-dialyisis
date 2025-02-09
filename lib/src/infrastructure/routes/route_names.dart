@@ -15,6 +15,7 @@ class HemoDialysisRouteNames extends Routes {
     RoutePaths.homePage,
     RoutePaths.homePage,
   );
+
   static const Routes storePage = Routes(
     RoutePaths.storePage,
     RoutePaths.storePage,
@@ -28,21 +29,31 @@ class HemoDialysisRouteNames extends Routes {
     RoutePaths.homePage + RoutePaths.educationPage,
     RoutePaths.educationPage,
   );
+
+  static const Routes fontPage = Routes(
+    RoutePaths.homePage + RoutePaths.fontPage,
+    RoutePaths.fontPage,
+  );
   static const Routes volumePage = Routes(
-    RoutePaths.homePage + RoutePaths.volumePage,
+    RoutePaths.homePage + RoutePaths.fontPage + RoutePaths.volumePage,
     RoutePaths.volumePage,
   );
 
-  static const Routes fontPage = Routes(
-    RoutePaths.homePage + RoutePaths.volumePage + RoutePaths.fontPage,
-    RoutePaths.fontPage,
-  );
   static const Routes vascularAccessPage = Routes(
     RoutePaths.homePage +
-        RoutePaths.volumePage +
         RoutePaths.fontPage +
+        RoutePaths.volumePage +
         RoutePaths.vascularAccessPage,
     RoutePaths.vascularAccessPage,
+  );
+
+  static const Routes weighingPage = Routes(
+    RoutePaths.homePage +
+        RoutePaths.fontPage +
+        RoutePaths.volumePage +
+        RoutePaths.vascularAccessPage +
+        RoutePaths.weighingPage,
+    RoutePaths.weighingPage,
   );
 
   static const Routes consumablesPage = Routes(
@@ -54,31 +65,20 @@ class HemoDialysisRouteNames extends Routes {
     RoutePaths.consumablesPage,
   );
 
-  static const Routes weighingPage = Routes(
-    RoutePaths.homePage +
-        RoutePaths.volumePage +
-        RoutePaths.fontPage +
-        RoutePaths.vascularAccessPage +
-        RoutePaths.consumablesPage +
-        RoutePaths.weighingPage,
-    RoutePaths.weighingPage,
-  );
   static const Routes installingPage = Routes(
     RoutePaths.homePage +
-        RoutePaths.volumePage +
         RoutePaths.fontPage +
+        RoutePaths.volumePage +
         RoutePaths.vascularAccessPage +
-        RoutePaths.consumablesPage +
         RoutePaths.weighingPage +
         RoutePaths.installingPage,
     RoutePaths.installingPage,
   );
   static const Routes preparationPage = Routes(
     RoutePaths.homePage +
-        RoutePaths.volumePage +
         RoutePaths.fontPage +
+        RoutePaths.volumePage +
         RoutePaths.vascularAccessPage +
-        RoutePaths.consumablesPage +
         RoutePaths.weighingPage +
         RoutePaths.installingPage +
         RoutePaths.preparationPage,
@@ -86,10 +86,9 @@ class HemoDialysisRouteNames extends Routes {
   );
   static const Routes physicalPreparationPage = Routes(
     RoutePaths.homePage +
-        RoutePaths.volumePage +
         RoutePaths.fontPage +
+        RoutePaths.volumePage +
         RoutePaths.vascularAccessPage +
-        RoutePaths.consumablesPage +
         RoutePaths.weighingPage +
         RoutePaths.installingPage +
         RoutePaths.preparationPage +
@@ -99,10 +98,9 @@ class HemoDialysisRouteNames extends Routes {
 
   static const Routes startProcessPage = Routes(
     RoutePaths.homePage +
-        RoutePaths.volumePage +
         RoutePaths.fontPage +
+        RoutePaths.volumePage +
         RoutePaths.vascularAccessPage +
-        RoutePaths.consumablesPage +
         RoutePaths.weighingPage +
         RoutePaths.installingPage +
         RoutePaths.preparationPage +
@@ -113,10 +111,9 @@ class HemoDialysisRouteNames extends Routes {
 
   static const Routes treatmentPage = Routes(
     RoutePaths.homePage +
-        RoutePaths.volumePage +
         RoutePaths.fontPage +
+        RoutePaths.volumePage +
         RoutePaths.vascularAccessPage +
-        RoutePaths.consumablesPage +
         RoutePaths.weighingPage +
         RoutePaths.installingPage +
         RoutePaths.preparationPage +
@@ -127,16 +124,15 @@ class HemoDialysisRouteNames extends Routes {
   );
   static const Routes bloodReturnPage = Routes(
     RoutePaths.homePage +
-        RoutePaths.volumePage +
         RoutePaths.fontPage +
+        RoutePaths.volumePage +
         RoutePaths.vascularAccessPage +
-        RoutePaths.consumablesPage +
         RoutePaths.weighingPage +
         RoutePaths.installingPage +
         RoutePaths.preparationPage +
         RoutePaths.physicalPreparationPage +
         RoutePaths.startProcessPage +
-        RoutePaths.treatmentPage+
+        RoutePaths.treatmentPage +
         RoutePaths.bloodReturnPage,
     RoutePaths.bloodReturnPage,
   );
