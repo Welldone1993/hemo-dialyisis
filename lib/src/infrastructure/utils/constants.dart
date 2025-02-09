@@ -45,9 +45,9 @@ class Constants {
   static const String step10 = 'lib/assets/stepper/10.png';
   static const String step11 = 'lib/assets/stepper/11.png';
 
-
-
   static const String avatarImage = 'lib/assets/avatar.png';
+
+  static const String addressImage = 'lib/assets/address.png';
 
   static const String deviceImage = 'lib/assets/device.png';
 

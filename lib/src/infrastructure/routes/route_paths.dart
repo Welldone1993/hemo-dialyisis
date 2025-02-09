@@ -5,6 +5,7 @@ class RoutePaths {
   static const String educationPage = '/education';
   static const String storePage = '/store';
   static const String volumePage = '/volume';
+  static const String addressPage = '/address';
   static const String fontPage = '/font';
   static const String vascularAccessPage = '/vascular-access-page';
   static const String consumablesPage = '/consumables';

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../pages/address_page/common/address_binding.dart';
+import '../../pages/address_page/view/address_page_view.dart';
 import '../../pages/blood_return_page/common/blood_return_binding.dart';
 import '../../pages/blood_return_page/view/blood_return_page_view.dart';
 import '../../pages/consumables_page/common/consumables_page_binding.dart';
@@ -44,7 +46,7 @@ class HemoDialysisModulePages {
         page: HomePageView.new,
         binding: HomePageBinding(),
         children: [
-          _fontPage(),
+          _addressPage(),
           _profilePage(),
           _educationPage(),
         ],
@@ -77,6 +79,13 @@ class HemoDialysisModulePages {
         page: VolumePageView.new,
         binding: VolumePageBinding(),
         children: [_vascularAccessPage()],
+      );
+
+  static GetPage<dynamic> _addressPage() => GetPage(
+        name: HemoDialysisRouteNames.addressPage.path,
+        page: AddressPageView.new,
+        binding: AddressPageBinding(),
+        children: [_fontPage()],
       );
 
   static GetPage<dynamic> _fontPage() => GetPage(

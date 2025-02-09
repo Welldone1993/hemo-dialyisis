@@ -30,17 +30,25 @@ class HemoDialysisRouteNames extends Routes {
     RoutePaths.educationPage,
   );
 
+  static const Routes addressPage = Routes(
+    RoutePaths.homePage + RoutePaths.addressPage,
+    RoutePaths.addressPage,
+  );
   static const Routes fontPage = Routes(
-    RoutePaths.homePage + RoutePaths.fontPage,
+    RoutePaths.homePage + RoutePaths.addressPage + RoutePaths.fontPage,
     RoutePaths.fontPage,
   );
   static const Routes volumePage = Routes(
-    RoutePaths.homePage + RoutePaths.fontPage + RoutePaths.volumePage,
+    RoutePaths.homePage +
+        RoutePaths.addressPage +
+        RoutePaths.fontPage +
+        RoutePaths.volumePage,
     RoutePaths.volumePage,
   );
 
   static const Routes vascularAccessPage = Routes(
     RoutePaths.homePage +
+        RoutePaths.addressPage +
         RoutePaths.fontPage +
         RoutePaths.volumePage +
         RoutePaths.vascularAccessPage,
@@ -49,6 +57,7 @@ class HemoDialysisRouteNames extends Routes {
 
   static const Routes weighingPage = Routes(
     RoutePaths.homePage +
+        RoutePaths.addressPage +
         RoutePaths.fontPage +
         RoutePaths.volumePage +
         RoutePaths.vascularAccessPage +
@@ -59,6 +68,7 @@ class HemoDialysisRouteNames extends Routes {
   static const Routes consumablesPage = Routes(
     RoutePaths.homePage +
         RoutePaths.volumePage +
+        RoutePaths.addressPage +
         RoutePaths.fontPage +
         RoutePaths.vascularAccessPage +
         RoutePaths.consumablesPage,
@@ -67,6 +77,7 @@ class HemoDialysisRouteNames extends Routes {
 
   static const Routes installingPage = Routes(
     RoutePaths.homePage +
+        RoutePaths.addressPage +
         RoutePaths.fontPage +
         RoutePaths.volumePage +
         RoutePaths.vascularAccessPage +
@@ -76,6 +87,7 @@ class HemoDialysisRouteNames extends Routes {
   );
   static const Routes preparationPage = Routes(
     RoutePaths.homePage +
+        RoutePaths.addressPage +
         RoutePaths.fontPage +
         RoutePaths.volumePage +
         RoutePaths.vascularAccessPage +
@@ -86,6 +98,7 @@ class HemoDialysisRouteNames extends Routes {
   );
   static const Routes physicalPreparationPage = Routes(
     RoutePaths.homePage +
+        RoutePaths.addressPage +
         RoutePaths.fontPage +
         RoutePaths.volumePage +
         RoutePaths.vascularAccessPage +
@@ -98,6 +111,7 @@ class HemoDialysisRouteNames extends Routes {
 
   static const Routes startProcessPage = Routes(
     RoutePaths.homePage +
+        RoutePaths.addressPage +
         RoutePaths.fontPage +
         RoutePaths.volumePage +
         RoutePaths.vascularAccessPage +
@@ -111,6 +125,7 @@ class HemoDialysisRouteNames extends Routes {
 
   static const Routes treatmentPage = Routes(
     RoutePaths.homePage +
+        RoutePaths.addressPage +
         RoutePaths.fontPage +
         RoutePaths.volumePage +
         RoutePaths.vascularAccessPage +
@@ -124,6 +139,7 @@ class HemoDialysisRouteNames extends Routes {
   );
   static const Routes bloodReturnPage = Routes(
     RoutePaths.homePage +
+        RoutePaths.addressPage +
         RoutePaths.fontPage +
         RoutePaths.volumePage +
         RoutePaths.vascularAccessPage +

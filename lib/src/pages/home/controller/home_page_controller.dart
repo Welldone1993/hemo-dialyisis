@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import '../../../infrastructure/routes/route_names.dart';
 
 class HomePageController extends GetxController {
-  void navigateToFontPage() =>
-      Get.toNamed(HemoDialysisRouteNames.fontPage.uri);
+  void navigateToAddressPage() =>
+      Get.toNamed(HemoDialysisRouteNames.addressPage.uri);
 
   void navigateToProfilePage() =>
       Get.toNamed(HemoDialysisRouteNames.profilePage.uri);
