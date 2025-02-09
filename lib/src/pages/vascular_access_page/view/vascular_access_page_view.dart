@@ -8,6 +8,7 @@ import '../../../infrastructure/app_controller/app_controller.dart';
 import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
+import '../../shared/view/app_bar_home_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
 import '../../shared/view/stepper_header.dart';
 import '../controller/vascular_access_controller.dart';
@@ -20,6 +21,7 @@ class VascularAccessPageView extends GetView<VascularAccessController> {
         body: _body(),
         action1: const AppBarBackIcon(),
         action2: const AppBarSupportIcon(),
+        action3: const AppBarHomeIcon(),
         stepper: const StepperHeader(index: 3),
       );
 

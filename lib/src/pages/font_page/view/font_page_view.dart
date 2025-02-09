@@ -1,14 +1,15 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:hemo_dialysis/src/pages/shared/view/stepper_header.dart';
 import '../../../components/button_with_text.dart';
 import '../../../components/scaffold.dart';
 import '../../../infrastructure/app_controller/app_controller.dart';
 import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
+import '../../shared/view/app_bar_home_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
+import '../../shared/view/stepper_header.dart';
 import '../controller/font_page_controller.dart';
 
 class FontPageView extends GetView<FontPageController> {
@@ -19,6 +20,7 @@ class FontPageView extends GetView<FontPageController> {
         body: _body(),
         action1: const AppBarBackIcon(),
         action2: const AppBarSupportIcon(),
+        action3: const AppBarHomeIcon(),
         stepper: const StepperHeader(index: 1),
       );
 

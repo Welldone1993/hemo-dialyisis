@@ -9,6 +9,7 @@ import '../../../infrastructure/app_controller/app_controller.dart';
 import '../../../infrastructure/utils/constants.dart';
 import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
+import '../../shared/view/app_bar_home_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
 import '../../shared/view/stepper_header.dart';
 import '../controller/physical_preparation_controller.dart';

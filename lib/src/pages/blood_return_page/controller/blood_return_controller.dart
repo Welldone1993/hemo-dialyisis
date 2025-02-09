@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
+import 'package:hemo_dialysis/src/infrastructure/routes/route_paths.dart';
 
 class BloodReturnController extends GetxController {
   Timer? timer;
@@ -20,9 +21,7 @@ class BloodReturnController extends GetxController {
     if (!isReturningBlood.value) {
       _startTimer();
     } else {
-      isReturningBlood.value = false;
-      actionButtonName.value = 'بازگشت خون';
-      secondsLeft.value = 3;
+      Get.offAllNamed(RoutePaths.homePage);
     }
   }
 

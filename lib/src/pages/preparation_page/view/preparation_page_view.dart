@@ -21,8 +21,7 @@ class PreparationPageView extends GetView<PreparationPageController> {
         body: _body(),
         action1: const AppBarBackIcon(),
         action2: const AppBarSupportIcon(),
-    stepper: const StepperHeader(index: 6),
-
+        stepper: const StepperHeader(index: 6),
       );
 
   Widget _body() => DecoratedBox(
