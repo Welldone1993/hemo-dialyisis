@@ -9,6 +9,8 @@ import '../../pages/consumables_page/common/consumables_page_binding.dart';
 import '../../pages/consumables_page/view/consumable_page_view.dart';
 import '../../pages/education_page/common/education_page_binding.dart';
 import '../../pages/education_page/view/education_page_view.dart';
+import '../../pages/end_treatment/common/end_treatment_binding.dart';
+import '../../pages/end_treatment/view/end_treatment_page.dart';
 import '../../pages/font_page/common/font_page_binding.dart';
 import '../../pages/font_page/view/font_page_view.dart';
 import '../../pages/home/common/home_page_binding.dart';
@@ -145,9 +147,15 @@ class HemoDialysisModulePages {
       children: [_bloodReturnPage()]);
 
   static GetPage<dynamic> _bloodReturnPage() => GetPage(
-        name: HemoDialysisRouteNames.bloodReturnPage.path,
-        page: BloodReturnPageView.new,
-        binding: BloodReturnPageBinding(),
+      name: HemoDialysisRouteNames.bloodReturnPage.path,
+      page: BloodReturnPageView.new,
+      binding: BloodReturnPageBinding(),
+      children: [_endTreatmentPage()]);
+
+  static GetPage<dynamic> _endTreatmentPage() => GetPage(
+        name: HemoDialysisRouteNames.endTreatmentPage.path,
+        page: EndTreatmentPageView.new,
+        binding: EndTreatmentPageBinding(),
       );
 }
 

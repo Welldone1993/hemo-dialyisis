@@ -16,4 +16,5 @@ class RoutePaths {
   static const String startProcessPage = '/start-process';
   static const String treatmentPage = '/treatment';
   static const String bloodReturnPage = '/blood-return';
+  static const String endTreatmentPage = '/end-treatment';
 }

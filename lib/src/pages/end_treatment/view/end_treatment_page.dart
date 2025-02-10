@@ -1,8 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+
 import '../../../components/button_with_text.dart';
-import '../../../components/checkbox.dart';
 import '../../../components/image_provider.dart';
 import '../../../components/scaffold.dart';
 import '../../../infrastructure/app_controller/app_controller.dart';
@@ -11,17 +11,17 @@ import '../../../infrastructure/utils/decorations.dart';
 import '../../shared/view/app_bar_back_icon.dart';
 import '../../shared/view/app_bar_support_icon.dart';
 import '../../shared/view/stepper_header.dart';
-import '../controller/blood_return_controller.dart';
+import '../controller/end_treatment_controller.dart';
 
-class BloodReturnPageView extends GetView<BloodReturnController> {
-  const BloodReturnPageView({super.key});
+class EndTreatmentPageView extends GetView<EndTreatmentController> {
+  const EndTreatmentPageView({super.key});
 
   @override
   Widget build(BuildContext context) => CustomScaffold(
         body: _body(),
         action1: const AppBarBackIcon(),
         action2: const AppBarSupportIcon(),
-        stepper: const StepperHeader(index: 9),
+        stepper: const StepperHeader(index: 10),
       );
 
   Widget _body() => DecoratedBox(
@@ -57,12 +57,11 @@ class BloodReturnPageView extends GetView<BloodReturnController> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             CustomButtonWithText(
-              label: 'بازگشت خون',
+              label: 'پایان درمان',
               action: controller.buttonAction,
             ),
             const Spacer(),
-            // if (controller.isReturningBlood.value)
-            //   Expanded(child: _bloodReturnTimer()),
+            Expanded(child: _bloodReturnTimer()),
           ],
         ),
       );
@@ -72,7 +71,7 @@ class BloodReturnPageView extends GetView<BloodReturnController> {
           Expanded(
             flex: 3,
             child: FractionallySizedBox(
-              heightFactor: 0.9,
+              heightFactor: 0.8,
               widthFactor: 1,
               child: Obx(
                 () => Column(
@@ -106,62 +105,54 @@ class BloodReturnPageView extends GetView<BloodReturnController> {
                       ),
                     ),
                     const Spacer(),
-                    Expanded(child: _bloodReturnHint()),
                     const Spacer(),
                   ],
                 ),
               ),
             ),
           ),
-          Expanded(
-            flex: 2,
-            child: FractionallySizedBox(
-              child: Column(
-                children: [
-                  Expanded(
-                    child: CustomCheckbox(
-                      label:
-                          'ورودی خون به دستگاه را بسته و از محل دسترسی جدا کنید.',
-                      action: () {},
-                    ),
-                  ),
-                  Expanded(
-                    child: CustomCheckbox(
-                      label:
-                          'دسترسی جدا شده را به محلول نرمال سالین متصل کنید.',
-                      action: () {},
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
         ],
       );
 
-  Widget _bloodReturnHint() => Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Spacer(),
-          Expanded(
-            flex: 2,
-            child: AutoSizeText(
-              'پس از چک کردن موارد زیر دکمه بازگشت خون را لمس کنید.',
-              style: TextStyle(
-                fontFamily: Constants.iranSansFont,
-                color: Constants.disableColor,
-                fontSize: AppController().setting.value!.titleFontSize,
-              ),
-              textDirection: TextDirection.rtl,
+  Widget _bloodReturnTimer() => FractionallySizedBox(
+        widthFactor: 0.8,
+        heightFactor: 0.5,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            border: Border.all(),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(12),
             ),
           ),
-          Constants.mediumHorizontalSpacer,
-          const Icon(
-            CupertinoIcons.info,
-            color: Constants.disableColor,
+          child: FractionallySizedBox(
+            widthFactor: 0.9,
+            child: Row(
+              children: [
+                const Expanded(
+                  child: AutoSizeText(
+                    'زمان انتظار',
+                    style: TextStyle(
+                      fontFamily: Constants.iranSansFont,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Obx(
+                    () => AutoSizeText(
+                      controller.remainingTime.value,
+                      style: const TextStyle(
+                        fontFamily: Constants.iranSansFaNumFont,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 35,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-        ],
+        ),
       );
-
 }
