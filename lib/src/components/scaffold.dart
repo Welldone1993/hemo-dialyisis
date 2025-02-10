@@ -43,6 +43,8 @@ class _CustomScaffoldState extends State<CustomScaffold> {
         body: _body(),
         resizeToAvoidBottomInset: widget.resizeToAvoidBottomInset,
         floatingActionButton: CustomButtonWithIcon(
+          width: 60,
+          height: 60,
           icon: CupertinoIcons.speaker_2_fill,
           action: () {
             //   TODO: action in mute button

@@ -140,8 +140,8 @@ class TreatmentStatistic extends GetView<TreatmentPageController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
-                  child:
-                      CustomImageProvider(imageAddress: Constants.pauseImage)),
+                child: CustomImageProvider(imageAddress: Constants.pauseImage),
+              ),
               AutoSizeText(
                 'وقفه در درمان',
                 style: TextStyle(

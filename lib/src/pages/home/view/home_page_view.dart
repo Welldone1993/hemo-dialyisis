@@ -88,7 +88,7 @@ class HomePageView extends GetView<HomePageController> {
             ),
             _profileCardDivider(),
             CustomTextButton(
-              action: controller.navigateToProfilePage,
+              action: controller.navigateToPrescriptionPage,
               text: 'نسخه',
             ),
             _profileCardDivider(),
