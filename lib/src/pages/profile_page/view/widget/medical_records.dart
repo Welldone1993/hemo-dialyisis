@@ -69,7 +69,7 @@ class MedicalRecords extends GetView<ProfilePageController> {
           children: [
             const Icon(
               Icons.edit,
-              color: Constants.iconSecondColor,
+              color: Constants.iconFirstColor,
             ),
             Constants.smallHorizontalSpacer,
             const Icon(

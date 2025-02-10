@@ -204,9 +204,9 @@ class StorePageView extends GetView<StorePageController> {
               image: Constants.consumablesImage,
             ),
             _categoryItem(
-                title: 'لوازم ضد عفونی',
-                image: Constants.disinfectionSuppliesImage),
-            _categoryItem(title: 'سایر', image: ''),
+              title: 'لوازم ضد عفونی',
+              image: Constants.disinfectionSuppliesImage,
+            ),
           ],
         ),
       );

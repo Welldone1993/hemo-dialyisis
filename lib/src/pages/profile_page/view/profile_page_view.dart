@@ -126,6 +126,7 @@ class ProfilePageView extends GetView<ProfilePageController> {
                 color: header == controller.selectedHeader.value
                     ? Constants.whiteColor
                     : Constants.buttonSecondaryColor,
+                fontSize: 20
               ),
               textDirection: TextDirection.rtl,
             ),
