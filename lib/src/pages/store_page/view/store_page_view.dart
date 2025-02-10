@@ -19,6 +19,33 @@ class StorePageView extends GetView<StorePageController> {
         body: _body(),
         action1: const AppBarBackIcon(),
         action2: const AppBarSupportIcon(),
+        action3: _shoppingCartButton(),
+      );
+
+  Widget _shoppingCartButton() => Container(
+        decoration: const BoxDecoration(
+          color: Constants.buttonColor,
+          borderRadius: BorderRadius.all(
+            Radius.circular(Constants.mediumSpace),
+          ),
+        ),
+        padding: Constants.smallPadding,
+        child: const Row(
+          children: [
+            Icon(
+              Icons.shopping_cart,
+              color: Constants.whiteColor,
+            ),
+            AutoSizeText(
+              'سبد خرید',
+              style: TextStyle(
+                fontWeight: FontWeight.w300,
+                color: Colors.white,
+                fontFamily: Constants.iranSansFont,
+              ),
+            ),
+          ],
+        ),
       );
 
   Widget _body() => Row(
